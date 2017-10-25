@@ -1,0 +1,60 @@
+﻿Please don't forget to rate the template 5 stars.
+goto url : https://themeforest.net/downloads
+This gives us motivation in the permanent development of the mold and the addition of each news.
+
+Thanks to everyone who rated the 5 stars for the template.
+Thank you for your support in promoting continuous development.
+/*------------------------------------------------------------------*/
+ * Version 3.8 | 14 September 17
+ * 01- add single-checkalso.html page
+ * 02- add single-checkalso-right.html page
+ * 03- add reading-position-indicator.html page
+/*------------------------------------------------------------------*/
+ * Version 3.5 | 2 June 2017
+ * 01- add shop.html page
+ * 02- add shop-grid-view.html page
+ * 03- add shop-list-view.html page
+ * 04- add single-product.html page
+ * 05- add shortcodes font icons
+ * 03- 3 Bug fixes
+/*------------------------------------------------------------------*/
+ * Version 3.0 | 26 February 2017
+ * 01- Add Support RTL - Arabic (44+ Files HTML).
+ * 02- Add Page topreview.html
+ * 03- Add Page reviewstyle.html (10 Styles)
+ * 05- Add Review in posts
+ * 06- 2 Bug fixes
+/*------------------------------------------------------------------*/
+ * Version 2.6 | 1 February 2017
+ * 01- Add Page Create Recipe
+/*------------------------------------------------------------------*/
+ * Version 2.5 | 17 January 2017
+ * 01- 4 Bug fixes 
+ * 02- Add Revolution Slider
+ * 03- Add Get the Mobile App (Section)
+ * 04- Add Menu Of The Day (Section)
+ * 05- Add Page index-5.html
+ * 06- Add Page index-revslider-2.html
+ * 07- Add Page index-revslider-3.html
+ * 08- Add Page index-revslider-4.html
+ * 09- Add Page blog-full-width.html
+ * 10- Add Page blog-2-full-width.html
+ * 11- Add Page blog-2-right-sidebar.html
+ * 12- Add Page blog-2-left-sidebar.html
+ * 13- Add 2 Style Social Footer (social color - social color hover)
+/*------------------------------------------------------------------*/
+ * Version 2.0 | 13 January 2017
+ * 01- Add Page index-boxed.html
+ * 02- Add Page index-2.html
+ * 03- Add Page index-3.html
+ * 04- Add Page index-4.html
+ * 05- Add Page footer-1.html
+ * 06- Add Page pricing.html
+ * 07- Add 10 colors
+ * 08- Add Mega Menu
+ * 09- Add news letter
+ * 10- Add bread crums
+/*------------------------------------------------------------------*/
+ * Version 1.0 |1 January 17
+ *  - First release.
+/*------------------------------------------------------------------*/
