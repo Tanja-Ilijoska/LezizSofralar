@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LezizSofralar.ViewModels;
 
 namespace LezizSofralar.Controllers
 {
@@ -11,6 +12,7 @@ namespace LezizSofralar.Controllers
         // GET: Recipes
         public ActionResult Index()
         {
+            RecipesListItem indemodel = new RecipesListItem();
             return View();
         }
 
