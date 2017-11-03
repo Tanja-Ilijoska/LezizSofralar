@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LezizSofralar.ViewModels;
+using LezizSofralar.Models;
 
 namespace LezizSofralar.Controllers
 {
@@ -12,8 +13,13 @@ namespace LezizSofralar.Controllers
         // GET: Recipes
         public ActionResult Index()
         {
-            RecipesListItem indemodel = new RecipesListItem();
-            return View();
+            List<RecipesListItem> model = new List<RecipesListItem>();
+            IEnumerable<Recipe> all = Current.DbInit.Recipes.All();
+            Recipe u = Current.DbInit.Recipes.Get(1);
+
+            all.Where(x => x.Name != null);
+
+            return View(all);
         }
 
         // GET: Recipes/Details/5
