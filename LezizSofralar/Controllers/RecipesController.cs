@@ -40,11 +40,16 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                long uid = Current.DbInit.Recipes.Insert(
+                  new
+                  {
+                      Name = collection.GetValue("Name").ToString(),
+                      Instructions = collection.GetValue("Instructions").ToString()
+                  });
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
