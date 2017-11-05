@@ -5,12 +5,14 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class RecipesListItem
+    public class UsersViewModel
     {
         public int ID { get; set; }
 
-        public string DescriptionName { get; set; }
+        public string Name { get; set; }
 
-        public string Instructions { get; set; }
+        public string UserName { get; set; }
+
+
     }
 }

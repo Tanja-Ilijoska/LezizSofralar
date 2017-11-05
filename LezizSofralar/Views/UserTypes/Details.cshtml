@@ -1,0 +1,74 @@
+﻿@model LezizSofralar.ViewModels.UserTypesViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserTypesViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageCategories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageCategories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageLocations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageLocations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageFilters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageFilters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageUsers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageUsers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageRecipes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageRecipes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageOwnRecipes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageOwnRecipes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

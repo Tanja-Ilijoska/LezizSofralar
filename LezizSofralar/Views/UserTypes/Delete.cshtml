@@ -1,0 +1,80 @@
+﻿@model LezizSofralar.ViewModels.UserTypesViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UserTypesViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageCategories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageCategories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageLocations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageLocations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageFilters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageFilters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageUsers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageUsers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageRecipes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageRecipes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManageOwnRecipes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManageOwnRecipes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
