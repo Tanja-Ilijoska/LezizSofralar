@@ -307,15 +307,20 @@
     <Compile Include="Repository\RecipesRepository.cs" />
     <Compile Include="ViewModels\AttributesViewModels\AttributesListViewModel.cs" />
     <Compile Include="ViewModels\AttributesViewModels\AttributesViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CookingLevels\CookingLevelsListViewModel.cs" />
     <Compile Include="ViewModels\CookingLevels\CookingLevelsViewModel.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
+    <Compile Include="ViewModels\ProductStatusCodes\ProductStatusCodesListViewModel.cs" />
+    <Compile Include="ViewModels\ProductStatusCodes\ProductStatusCodesViewModel.cs" />
     <Compile Include="ViewModels\RecipeAttributes\RecipeAttributesListViewModel.cs" />
     <Compile Include="ViewModels\RecipeAttributes\RecipeAttributesViewModel.cs" />
     <Compile Include="ViewModels\Recipes\RecipesListViewModel.cs" />
     <Compile Include="ViewModels\Recipes\RecipesViewModel.cs" />
-    <Compile Include="ViewModels\UsersViewModel.cs" />
-    <Compile Include="ViewModels\UserTypesViewModel.cs" />
+    <Compile Include="ViewModels\Users\UsersListViewModel.cs" />
+    <Compile Include="ViewModels\Users\UsersViewModel.cs" />
+    <Compile Include="ViewModels\UserTypes\UserTypesListViewModel.cs" />
+    <Compile Include="ViewModels\UserTypes\UserTypesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -763,12 +768,14 @@
     <Content Include="Views\CookingLevels\Delete.cshtml" />
     <Content Include="Views\CookingLevels\Edit.cshtml" />
     <Content Include="Views\CookingLevels\Index.cshtml" />
+    <Content Include="Views\ProductStatusCode\Create.cshtml" />
+    <Content Include="Views\ProductStatusCode\Delete.cshtml" />
+    <Content Include="Views\ProductStatusCode\Details.cshtml" />
+    <Content Include="Views\ProductStatusCode\Edit.cshtml" />
+    <Content Include="Views\ProductStatusCode\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NewFolder1\" />
-    <Folder Include="Views\ProductStatusCode\" />
-    <Folder Include="Views\StandardGeneric\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

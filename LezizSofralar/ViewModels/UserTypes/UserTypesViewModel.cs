@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class UserTypesViewModel
+    public class UserTypesViewModel : BaseViewModel
     {
         public int Id { get; set; }
 

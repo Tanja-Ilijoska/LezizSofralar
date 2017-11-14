@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class AttributesViewModel
+    public class AttributesViewModel : BaseViewModel
     {
         public int Id { get; set; }
 
