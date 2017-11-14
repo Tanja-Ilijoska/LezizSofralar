@@ -3,65 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LezizSofralar.ViewModels;
-using LezizSofralar.Models;
 
 namespace LezizSofralar.Controllers
 {
-    public class RecipesController : StandardGenericController<RecipesListViewModel, RecipesViewModel, Recipe>
+    public class CookingLevelsController : Controller
     {
-        // GET: Recipes
+        // GET: CookingLevels
         public ActionResult Index()
         {
-            List<RecipesListViewModel> model = new List<RecipesListViewModel>();
-            IEnumerable<Recipe> all = Current.DbInit.Recipes.All();
-            Recipe u = Current.DbInit.Recipes.Get(1);
-
-            all.Where(x => x.DisplayName != null);
-
-            return View(all);
+            return View();
         }
 
-        // GET: Recipes/Details/5
+        // GET: CookingLevels/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Recipes/Create
+        // GET: CookingLevels/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Recipes/Create
+        // POST: CookingLevels/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
             try
             {
-                long uid = Current.DbInit.Recipes.Insert(
-                  new
-                  {
-                      Name = collection.GetValue("Name").ToString(),
-                      Instructions = collection.GetValue("Instructions").ToString()
-                  });
+                // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
             }
-            catch(Exception ex)
+            catch
             {
                 return View();
             }
         }
 
-        // GET: Recipes/Edit/5
+        // GET: CookingLevels/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Recipes/Edit/5
+        // POST: CookingLevels/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -77,13 +64,13 @@ namespace LezizSofralar.Controllers
             }
         }
 
-        // GET: Recipes/Delete/5
+        // GET: CookingLevels/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Recipes/Delete/5
+        // POST: CookingLevels/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

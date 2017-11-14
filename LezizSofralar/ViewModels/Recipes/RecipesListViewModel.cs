@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class RecipesListItem
+    public class RecipesListViewModel : ListViewModel
     {
         public int ID { get; set; }
 

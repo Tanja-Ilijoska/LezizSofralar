@@ -13,6 +13,9 @@ namespace LezizSofralar.Models
         public Table<RecipeAttributes> RecipeAttributes { get; set; }
         public Table<Users> Users { get; set; }
         public Table<UserTypes> UserTypes {get; set;}
+        public Table<CookingLevels> CookingLevels { get; set; }
+
+        public Table<ProductStatusCodes> ProductStatusCodes { get; set; }
     }
 
 }
