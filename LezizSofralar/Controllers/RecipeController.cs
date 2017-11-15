@@ -10,16 +10,25 @@ namespace LezizSofralar.Controllers
 {
     public class RecipeController : StandardGenericController<RecipesListViewModel, RecipesViewModel, Recipe>
     {
-        // GET: Recipes
-        public ActionResult Index()
+        public override IEnumerable<Recipe> GetDataset()
+        {
+            IEnumerable<Recipe> all = Current.DbInit.Recipe.All();
+            return all;
+        }
+
+        public override List<RecipesListViewModel> ProjectToListViewModel(IEnumerable<Recipe> dbItems)
         {
             List<RecipesListViewModel> model = new List<RecipesListViewModel>();
-            IEnumerable<Recipe> all = Current.DbInit.Recipe.All();
-            Recipe u = Current.DbInit.Recipe.Get(1);
-
-            all.Where(x => x.DisplayName != null);
-
-            return View(all);
+            foreach (var item in dbItems)
+            {
+                model.Add(new RecipesListViewModel
+                {
+                    ID = item.Id,
+                    DisplayName = item.DisplayName,
+                    Description = item.Description
+                });
+            }
+            return model;
         }
 
         // GET: Recipes/Details/5

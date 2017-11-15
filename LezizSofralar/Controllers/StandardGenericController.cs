@@ -7,31 +7,28 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class StandardGenericController<TListViewModel , TViewModel, TEntity> : Controller
+    public abstract class StandardGenericController<TListViewModel , TViewModel, TEntity> : Controller
     {
         // GET: StandardGeneric
         public ActionResult Index()
         {
-            //IEnumerable<TEntity> dbAttributes = Current.DbInit.TEntity.All();
+            IEnumerable<TEntity> dbItems = GetDataset();
 
-            ////filtering
+            //filtering
 
-            ////authorisation
+            //authorisation
 
-            ////slapper mapping
-            //List<TListViewModel> model = new List<TListViewModel>();
-            //if (dbAttributes != null && dbAttributes.Count() > 0)
-            //    foreach (var item in dbAttributes)
-            //    {
-            //        model.Add(new TListViewModel()
-            //        {
-            //            Id = item.Id,
-            //            Name = item.Name
-            //        });
-            //    }
+            //slapper mapping
+            List<TListViewModel> model = new List<TListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                model = ProjectToListViewModel(dbItems);
 
-            return View();
+            return View(model);
         }
+
+        public abstract IEnumerable<TEntity> GetDataset();
+
+        public abstract List<TListViewModel> ProjectToListViewModel(IEnumerable<TEntity> dbItems);
 
         public ActionResult Read(int PageSize, int PageNumber)
         {

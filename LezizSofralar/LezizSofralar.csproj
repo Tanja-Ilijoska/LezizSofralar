@@ -308,7 +308,7 @@
     <Compile Include="Models\RecipeAttribute.cs" />
     <Compile Include="Models\RecipeCategory.cs" />
     <Compile Include="Models\RecipeLocation.cs" />
-    <Compile Include="Models\Recipes.cs" />
+    <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserFavouriteAuthor.cs" />
     <Compile Include="Models\UserFavouriteRecipe.cs" />
@@ -318,6 +318,16 @@
     <Compile Include="Models\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RecipesRepository.cs" />
+    <Compile Include="Resources\AttributeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttributeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\RecipeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecipeResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\Attribute\AttributesListViewModel.cs" />
     <Compile Include="ViewModels\Attribute\AttributesViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -759,34 +769,34 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Recipes\Index.cshtml" />
+    <Content Include="Views\Recipe\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Recipes\Create.cshtml" />
-    <Content Include="Views\Recipes\Details.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Users\Create.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
-    <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\UserTypes\Index.cshtml" />
-    <Content Include="Views\UserTypes\Create.cshtml" />
-    <Content Include="Views\UserTypes\Details.cshtml" />
-    <Content Include="Views\UserTypes\Delete.cshtml" />
-    <Content Include="Views\UserTypes\Edit.cshtml" />
-    <Content Include="Views\Attributes\Index.cshtml" />
-    <Content Include="Views\Attributes\Create.cshtml" />
-    <Content Include="Views\Attributes\Details.cshtml" />
-    <Content Include="Views\Attributes\Delete.cshtml" />
-    <Content Include="Views\Attributes\Edit.cshtml" />
-    <Content Include="Views\RecipeAttributes\Create.cshtml" />
-    <Content Include="Views\RecipeAttributes\Delete.cshtml" />
-    <Content Include="Views\RecipeAttributes\Details.cshtml" />
-    <Content Include="Views\RecipeAttributes\Edit.cshtml" />
-    <Content Include="Views\RecipeAttributes\Index.cshtml" />
-    <Content Include="Views\CookingLevels\Details.cshtml" />
-    <Content Include="Views\CookingLevels\Create.cshtml" />
-    <Content Include="Views\CookingLevels\Delete.cshtml" />
-    <Content Include="Views\CookingLevels\Edit.cshtml" />
-    <Content Include="Views\CookingLevels\Index.cshtml" />
+    <Content Include="Views\Recipe\Create.cshtml" />
+    <Content Include="Views\Recipe\Details.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\UserType\Index.cshtml" />
+    <Content Include="Views\UserType\Create.cshtml" />
+    <Content Include="Views\UserType\Details.cshtml" />
+    <Content Include="Views\UserType\Delete.cshtml" />
+    <Content Include="Views\UserType\Edit.cshtml" />
+    <Content Include="Views\Attribute\Index.cshtml" />
+    <Content Include="Views\Attribute\Create.cshtml" />
+    <Content Include="Views\Attribute\Details.cshtml" />
+    <Content Include="Views\Attribute\Delete.cshtml" />
+    <Content Include="Views\Attribute\Edit.cshtml" />
+    <Content Include="Views\RecipeAttribute\Create.cshtml" />
+    <Content Include="Views\RecipeAttribute\Delete.cshtml" />
+    <Content Include="Views\RecipeAttribute\Details.cshtml" />
+    <Content Include="Views\RecipeAttribute\Edit.cshtml" />
+    <Content Include="Views\RecipeAttribute\Index.cshtml" />
+    <Content Include="Views\CookingLevel\Details.cshtml" />
+    <Content Include="Views\CookingLevel\Create.cshtml" />
+    <Content Include="Views\CookingLevel\Delete.cshtml" />
+    <Content Include="Views\CookingLevel\Edit.cshtml" />
+    <Content Include="Views\CookingLevel\Index.cshtml" />
     <Content Include="Views\ProductStatusCode\Create.cshtml" />
     <Content Include="Views\ProductStatusCode\Delete.cshtml" />
     <Content Include="Views\ProductStatusCode\Details.cshtml" />
@@ -805,7 +815,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\NewFolder1\" />
     <Folder Include="Views\LogChange\" />
   </ItemGroup>
   <ItemGroup>
@@ -818,6 +827,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AttributeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AttributeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RecipeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecipeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -42,6 +42,7 @@ namespace LezizSofralar.Models
         public virtual IEnumerable<RecipeAttribute> RecipeAttributes { get; set; }
         //  public virtual IEnumerable<RecipeLinks> RecipeLinks { get; set; }
         //  public virtual IEnumerable<RecipeTags> RecipeTags { get; set; }
+
     }
 }
   

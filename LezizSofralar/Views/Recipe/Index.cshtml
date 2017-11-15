@@ -1,6 +1,6 @@
-﻿@using LezizSofralar.Models
+﻿@using LezizSofralar.ViewModels
 
-@model  IEnumerable<Recipe>
+@model  List<LezizSofralar.ViewModels.RecipesListViewModel>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,8 +23,9 @@
                             <span class="image-fader"><span class="hover-icon"><a href="javascript:void(0);"><i class="fa fa-heart"></i></a></span></span>
                         </div>
                         <div class="excerpt">
-                            <h3><a href="#"> @Html.Display(item.Name)</a></h3>
-                            <p>@Html.Display(item.Instructions)</p>
+                            <h3><a href="#"> @item.DisplayName</a></h3>
+                            <p>@if (item.Description != null)
+                            {@item.Description}</p>                                
                             <ul class="stars">
                                 <li class="active"><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
                                 <li class="active"><a href="#" class="icon"><i class="fa fa-star"></i></a></li>

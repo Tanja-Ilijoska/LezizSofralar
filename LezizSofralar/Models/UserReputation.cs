@@ -13,5 +13,15 @@ namespace LezizSofralar.Models
         public int ReviewerID { get; set; }
 
         public decimal ReputationNumber { get; set; }
+
+        public int CreateUserID { get; set; }
+
+        public System.DateTime CreateTime { get; set; }
+
+        public System.DateTime UpdateTime { get; set; }
+
+        public int UpdateUserID { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }
