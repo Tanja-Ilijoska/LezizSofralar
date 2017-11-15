@@ -1,0 +1,250 @@
+﻿@model LezizSofralar.ViewModels.Category.CategoryViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CategoryViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedByUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedByUserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedByUserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedByUserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateUpdated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateUpdated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentLocationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentLocationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKeywords)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKeywords)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FriendlyURI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FriendlyURI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisibilityStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisibilityStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisibilityEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisibilityEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowOnTopMenu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowOnTopMenu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowFilters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowFilters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultSort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultSort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultSortArgumentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultSortArgumentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowProducts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowProducts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowSubCategoryProducts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowSubCategoryProducts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductListingPageSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductListingPageSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOpenNewPge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsOpenNewPge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsVisibleOnMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsVisibleOnMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowSubCategoryOnTopView)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowSubCategoryOnTopView)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowOnProductFeed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowOnProductFeed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

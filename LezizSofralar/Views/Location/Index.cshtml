@@ -1,0 +1,177 @@
+﻿@model IEnumerable<LezizSofralar.ViewModels.Location.LocationListViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentLocationID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaKeywords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FriendlyURI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVisible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisibilityStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisibilityEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowOnTopMenu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowFilters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultSort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultSortArgumentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowProducts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowSubCategoryProducts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductListingPageSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOpenNewPge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVisibleOnMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowSubCategoryOnTopView)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowOnProductFeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentLocationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaKeywords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FriendlyURI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVisible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisibilityStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisibilityEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowOnTopMenu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowFilters)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisplayOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DefaultSort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DefaultSortArgumentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowProducts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowSubCategoryProducts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductListingPageSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOpenNewPge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVisibleOnMobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowSubCategoryOnTopView)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowOnProductFeed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

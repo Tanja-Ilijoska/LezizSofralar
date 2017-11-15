@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class AttributesController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
+    public class AttributeController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
     {
         // GET: Attributes
         public ActionResult Index()

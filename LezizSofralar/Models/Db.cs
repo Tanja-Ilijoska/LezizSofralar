@@ -18,7 +18,7 @@ namespace LezizSofralar.Models
         public Table<Category> Category { get; set; }
         public Table<Location> Location { get; set; }
         public Table<LogChange> LogChange { get; set; }
-        public Table<RecipeCategorie> RecipeCategorie { get; set; }
+        public Table<RecipeCategory> RecipeCategorie { get; set; }
         public Table<RecipeLocation> RecipeLocation { get; set; }
         public Table<UserFavouriteAuthor> UserFavouriteAuthor { get; set; }
         public Table<UserFavouriteRecipe> UserFavouriteRecipe { get; set; }

@@ -6,27 +6,27 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class CookingLevelsController : Controller
+    public class CategoryController : Controller
     {
-        // GET: CookingLevels
+        // GET: Category
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: CookingLevels/Details/5
+        // GET: Category/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: CookingLevels/Create
+        // GET: Category/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CookingLevels/Create
+        // POST: Category/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -42,13 +42,13 @@ namespace LezizSofralar.Controllers
             }
         }
 
-        // GET: CookingLevels/Edit/5
+        // GET: Category/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: CookingLevels/Edit/5
+        // POST: Category/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -64,13 +64,13 @@ namespace LezizSofralar.Controllers
             }
         }
 
-        // GET: CookingLevels/Delete/5
+        // GET: Category/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: CookingLevels/Delete/5
+        // POST: Category/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class UserTypesController : Controller
+    public class UserTypeController : Controller
     {
         // GET: UserTypes
         public ActionResult Index()

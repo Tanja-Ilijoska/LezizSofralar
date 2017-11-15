@@ -282,14 +282,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AttributesController.cs" />
-    <Compile Include="Controllers\CookingLevelsController.cs" />
+    <Compile Include="Controllers\AttributeController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CookingLevelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RecipeAttributesController.cs" />
-    <Compile Include="Controllers\RecipesController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\LogChange.cs" />
+    <Compile Include="Controllers\RecipeAttributeController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\StandardGenericController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\UserTypesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,12 +301,12 @@
     <Compile Include="Models\CookingLevel.cs" />
     <Compile Include="Models\Db.cs" />
     <Compile Include="Models\DbInit.cs" />
-    <Compile Include="Controllers\ProductStatusCodesController.cs" />
+    <Compile Include="Controllers\ProductStatusCodeController.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\LogChange.cs" />
     <Compile Include="Models\ProductStatusCode.cs" />
     <Compile Include="Models\RecipeAttribute.cs" />
-    <Compile Include="Models\RecipeCategorie.cs" />
+    <Compile Include="Models\RecipeCategory.cs" />
     <Compile Include="Models\RecipeLocation.cs" />
     <Compile Include="Models\Recipes.cs" />
     <Compile Include="Models\User.cs" />
@@ -318,9 +321,15 @@
     <Compile Include="ViewModels\Attribute\AttributesListViewModel.cs" />
     <Compile Include="ViewModels\Attribute\AttributesViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryListViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryViewModel.cs" />
     <Compile Include="ViewModels\CookingLevel\CookingLevelsListViewModel.cs" />
     <Compile Include="ViewModels\CookingLevel\CookingLevelsViewModel.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationListViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationViewModel.cs" />
+    <Compile Include="ViewModels\LogChange\LogChangeListViewModel.cs" />
+    <Compile Include="ViewModels\LogChange\LogChangeViewModel.cs" />
     <Compile Include="ViewModels\ProductStatusCode\ProductStatusCodesListViewModel.cs" />
     <Compile Include="ViewModels\ProductStatusCode\ProductStatusCodesViewModel.cs" />
     <Compile Include="ViewModels\RecipeAttribute\RecipeAttributesListViewModel.cs" />
@@ -783,9 +792,21 @@
     <Content Include="Views\ProductStatusCode\Details.cshtml" />
     <Content Include="Views\ProductStatusCode\Edit.cshtml" />
     <Content Include="Views\ProductStatusCode\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Location\Edit.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\NewFolder1\" />
+    <Folder Include="Views\LogChange\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

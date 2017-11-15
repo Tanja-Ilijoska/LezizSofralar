@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class RecipeCategorie
+    public class RecipeCategory
     {
         public int Id { get; set; }
 

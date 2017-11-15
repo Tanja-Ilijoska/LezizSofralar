@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class RecipeAttributesController : Controller
+    public class RecipeAttributeController : Controller
     {
         // GET: RecipeAttributes
         public ActionResult Index()
