@@ -13,7 +13,7 @@ namespace LezizSofralar.Controllers
         // GET: RecipeAttributes
         public ActionResult Index()
         {
-            IEnumerable<RecipeAttributes> dbRecipeAttributes = Current.DbInit.RecipeAttributes.All();
+            IEnumerable<RecipeAttribute> dbRecipeAttributes = Current.DbInit.RecipeAttribute.All();
 
             //filtering
 
@@ -38,7 +38,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Details(int id)
         {
             RecipeAttributesViewModel model = new RecipeAttributesViewModel();
-            var dbRecipeAttributes = Current.DbInit.RecipeAttributes.Get(id);
+            var dbRecipeAttributes = Current.DbInit.RecipeAttribute.Get(id);
             if (dbRecipeAttributes != null)
             {
                 model.Id = dbRecipeAttributes.Id;
@@ -59,7 +59,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                long uid = Current.DbInit.RecipeAttributes.Insert(
+                long uid = Current.DbInit.RecipeAttribute.Insert(
                   new
                   {
                       Name = collection.Name
@@ -77,7 +77,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Edit(int id)
         {
             RecipeAttributesViewModel model = new RecipeAttributesViewModel();
-            var dbRecipeAttributes = Current.DbInit.RecipeAttributes.Get(id);
+            var dbRecipeAttributes = Current.DbInit.RecipeAttribute.Get(id);
             if (dbRecipeAttributes != null)
             {
                 model.Id = dbRecipeAttributes.Id;
@@ -92,10 +92,10 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                var dbRecipeAttributes = Current.DbInit.RecipeAttributes.Get(id);
+                var dbRecipeAttributes = Current.DbInit.RecipeAttribute.Get(id);
                 dbRecipeAttributes.Id = model.Id;
                 dbRecipeAttributes.Name = model.Name;
-                int uid = Current.DbInit.RecipeAttributes.Update(id, dbRecipeAttributes);
+                int uid = Current.DbInit.RecipeAttribute.Update(id, dbRecipeAttributes);
 
                 return RedirectToAction("Index");
             }
@@ -109,7 +109,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Delete(int id)
         {
             RecipeAttributesViewModel model = new RecipeAttributesViewModel();
-            var dbRecipeAttributes = Current.DbInit.RecipeAttributes.Get(id);
+            var dbRecipeAttributes = Current.DbInit.RecipeAttribute.Get(id);
             if (dbRecipeAttributes != null)
             {
                 model.Id = dbRecipeAttributes.Id;
@@ -124,7 +124,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                bool isAnotherTrue = Current.DbInit.RecipeAttributes.Delete(new { Id = id });
+                bool isAnotherTrue = Current.DbInit.RecipeAttribute.Delete(new { Id = id });
                 if (isAnotherTrue)
                     return RedirectToAction("Index");
                 else

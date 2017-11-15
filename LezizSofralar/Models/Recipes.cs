@@ -39,7 +39,7 @@ namespace LezizSofralar.Models
 
         public bool IsActive { get; set; }
         //stavki
-        public virtual IEnumerable<RecipeAttributes> RecipeAttributes { get; set; }
+        public virtual IEnumerable<RecipeAttribute> RecipeAttributes { get; set; }
         //  public virtual IEnumerable<RecipeLinks> RecipeLinks { get; set; }
         //  public virtual IEnumerable<RecipeTags> RecipeTags { get; set; }
     }

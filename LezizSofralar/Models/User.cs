@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class Users
+    public class User
     {
         public int Id { get; set; }
 
@@ -17,6 +17,6 @@ namespace LezizSofralar.Models
 
         public string UserTypeID { get; set; }
 
-        public virtual IEnumerable<UserTypes> UserTypes { get; set; }
+        public virtual IEnumerable<UserType> UserTypes { get; set; }
     }
 }

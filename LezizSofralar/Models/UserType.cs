@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class UserTypes
+    public class UserType
     {
         public int Id { get; set; }
 

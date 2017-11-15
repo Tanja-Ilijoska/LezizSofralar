@@ -8,12 +8,12 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class AttributesController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Attributes>
+    public class AttributesController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
     {
         // GET: Attributes
         public ActionResult Index()
         {
-            IEnumerable<Attributes> dbAttributes = Current.DbInit.Attributes.All();
+            IEnumerable<Models.Attribute> dbAttributes = Current.DbInit.Attribute.All();
 
             //filtering
 
@@ -38,7 +38,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Details(int id)
         {
             AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attributes.Get(id);
+            var dbAttributes = Current.DbInit.Attribute.Get(id);
             if (dbAttributes != null)
             {
                 model.Id = dbAttributes.Id;
@@ -59,7 +59,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                long uid = Current.DbInit.Attributes.Insert(
+                long uid = Current.DbInit.Attribute.Insert(
                   new
                   {
                       Name = collection.Name
@@ -77,7 +77,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Edit(int id)
         {
             AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attributes.Get(id);
+            var dbAttributes = Current.DbInit.Attribute.Get(id);
             if (dbAttributes != null)
             {
                 model.Id = dbAttributes.Id;
@@ -92,10 +92,10 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                var dbAttributes = Current.DbInit.Attributes.Get(id);
+                var dbAttributes = Current.DbInit.Attribute.Get(id);
                 dbAttributes.Id = model.Id;
                 dbAttributes.Name = model.Name;
-                int uid = Current.DbInit.Attributes.Update(id, dbAttributes);
+                int uid = Current.DbInit.Attribute.Update(id, dbAttributes);
 
                 return RedirectToAction("Index");
             }
@@ -109,7 +109,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Delete(int id)
         {
             AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attributes.Get(id);
+            var dbAttributes = Current.DbInit.Attribute.Get(id);
             if (dbAttributes != null)
             {
                 model.Id = dbAttributes.Id;
@@ -124,7 +124,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                bool isTrue = Current.DbInit.Attributes.Delete(new { Id = id });
+                bool isTrue = Current.DbInit.Attribute.Delete(new { Id = id });
                 if (isTrue)
                     return RedirectToAction("Index");
                 else

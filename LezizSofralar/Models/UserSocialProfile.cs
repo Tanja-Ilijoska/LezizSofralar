@@ -5,10 +5,15 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class Attributes
+    public class UserSocialProfile
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         public string Name { get; set; }
+
+        public int UserID { get; set; }
+
+        public string SocialURL { get; set; }
+
     }
 }

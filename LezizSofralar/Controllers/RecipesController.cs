@@ -14,8 +14,8 @@ namespace LezizSofralar.Controllers
         public ActionResult Index()
         {
             List<RecipesListViewModel> model = new List<RecipesListViewModel>();
-            IEnumerable<Recipe> all = Current.DbInit.Recipes.All();
-            Recipe u = Current.DbInit.Recipes.Get(1);
+            IEnumerable<Recipe> all = Current.DbInit.Recipe.All();
+            Recipe u = Current.DbInit.Recipe.Get(1);
 
             all.Where(x => x.DisplayName != null);
 
@@ -40,7 +40,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                long uid = Current.DbInit.Recipes.Insert(
+                long uid = Current.DbInit.Recipe.Insert(
                   new
                   {
                       Name = collection.GetValue("Name").ToString(),

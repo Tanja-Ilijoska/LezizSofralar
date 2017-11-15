@@ -13,5 +13,8 @@ namespace LezizSofralar.ViewModels
 
         public string UserName { get; set; }
 
+
+        //izvedeni
+        public int NumberProfileViews { get; set; }
     }
 }

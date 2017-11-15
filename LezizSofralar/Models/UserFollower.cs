@@ -5,10 +5,12 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class ProductStatusCodes
+    public class UserFollower
     {
         public int Id { get; set; }
 
-        public string Status { get; set; }
+        public int UserID { get; set; }
+
+        public int FollowerID { get; set; }
     }
 }

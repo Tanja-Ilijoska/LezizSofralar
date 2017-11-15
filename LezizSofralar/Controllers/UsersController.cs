@@ -33,7 +33,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                long uid = Current.DbInit.Recipes.Insert(
+                long uid = Current.DbInit.Recipe.Insert(
                    new
                    {
                        Name = collection.GetValue("Name").ToString(),

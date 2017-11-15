@@ -5,12 +5,10 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class RecipeAttributes
+    public class ProductStatusCode
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
-
-        public int AttributeId { get; set; }
+        public string Status { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace LezizSofralar.Controllers
         // GET: UserTypes
         public ActionResult Index()
         {
-            IEnumerable<UserTypes> dbUserTypes = Current.DbInit.UserTypes.All();
+            IEnumerable<UserType> dbUserTypes = Current.DbInit.UserType.All();
 
             //filtering
 
@@ -44,7 +44,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Details(int id)
         {
             UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserTypes.Get(id);
+            var dbUserTypes = Current.DbInit.UserType.Get(id);
             if (dbUserTypes != null)
             {
                 model.Id = dbUserTypes.Id;
@@ -71,7 +71,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                long uid = Current.DbInit.UserTypes.Insert(
+                long uid = Current.DbInit.UserType.Insert(
                   new
                   {
                       Name = collection.Name,
@@ -95,7 +95,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Edit(int id)
         {
             UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserTypes.Get(id);
+            var dbUserTypes = Current.DbInit.UserType.Get(id);
             if (dbUserTypes != null)
             {
                 model.Id = dbUserTypes.Id;
@@ -116,7 +116,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                var dbUserTypes = Current.DbInit.UserTypes.Get(id);
+                var dbUserTypes = Current.DbInit.UserType.Get(id);
                 dbUserTypes.Id = model.Id;
                 dbUserTypes.Name =  model.Name;
                 dbUserTypes.ManageCategories= model.ManageCategories;
@@ -125,7 +125,7 @@ namespace LezizSofralar.Controllers
                 dbUserTypes.ManageOwnRecipes = model.ManageOwnRecipes ;
                 dbUserTypes.ManageRecipes   =  model.ManageRecipes ;
                 dbUserTypes.ManageUsers =  model.ManageUsers;
-                int uid = Current.DbInit.UserTypes.Update(id, dbUserTypes);
+                int uid = Current.DbInit.UserType.Update(id, dbUserTypes);
 
                 return RedirectToAction("Index");
             }
@@ -139,7 +139,7 @@ namespace LezizSofralar.Controllers
         public ActionResult Delete(int id)
         {
             UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserTypes.Get(id);
+            var dbUserTypes = Current.DbInit.UserType.Get(id);
             if (dbUserTypes != null)
             {
                 model.Id = dbUserTypes.Id;
@@ -160,7 +160,7 @@ namespace LezizSofralar.Controllers
         {
             try
             {
-                bool isAnotherTrue = Current.DbInit.UserTypes.Delete(new { Id = id });
+                bool isAnotherTrue = Current.DbInit.UserType.Delete(new { Id = id });
                 if(isAnotherTrue)
                     return RedirectToAction("Index");
                 else
