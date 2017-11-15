@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LezizSofralar.Models
 {
-    public class ProductStatusCode
+    public class ProductStatusCode 
     {
         public int Id { get; set; }
 

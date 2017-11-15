@@ -323,10 +323,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AttributeResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\CategoryResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CookingLevelResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CookingLevelResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LogChangeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogChangeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ProductStatusCodeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductStatusCodeResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\RecipeResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecipeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserTypeResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserTypeResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Attribute\AttributesListViewModel.cs" />
     <Compile Include="ViewModels\Attribute\AttributesViewModel.cs" />
@@ -833,9 +868,37 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AttributeResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CategoryResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CategoryResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CookingLevelResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CookingLevelResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LocationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LogChangeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogChangeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ProductStatusCodeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductStatusCodeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\RecipeResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecipeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserTypeResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserTypeResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
