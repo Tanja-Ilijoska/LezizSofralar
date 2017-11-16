@@ -10,7 +10,7 @@ namespace LezizSofralar.Models
         public int ID { get; set; }
         public string DisplayName { get; set; }
         public string Code { get; set; }
-        public int ParentLocationID { get; set; }
+        public int ParentCategoryID { get; set; }
         public string ShortName { get; set; }
         public string Description { get; set; }
         public string MetaKeywords { get; set; }

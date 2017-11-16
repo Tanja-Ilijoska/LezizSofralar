@@ -22,7 +22,7 @@ namespace LezizSofralar.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CategoryResources {
+    public class CategoryResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace LezizSofralar.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LezizSofralar.Resources.CategoryResources", typeof(CategoryResources).Assembly);
@@ -51,7 +51,7 @@ namespace LezizSofralar.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
-        internal static string FieldName_Code {
+        public static string FieldName_Code {
             get {
                 return ResourceManager.GetString("FieldName_Code", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Default Sort.
         /// </summary>
-        internal static string FieldName_DefaultSort {
+        public static string FieldName_DefaultSort {
             get {
                 return ResourceManager.GetString("FieldName_DefaultSort", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Default Sort Argument Code.
         /// </summary>
-        internal static string FieldName_DefaultSortArgumentCode {
+        public static string FieldName_DefaultSortArgumentCode {
             get {
                 return ResourceManager.GetString("FieldName_DefaultSortArgumentCode", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
-        internal static string FieldName_Description {
+        public static string FieldName_Description {
             get {
                 return ResourceManager.GetString("FieldName_Description", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Display Name.
         /// </summary>
-        internal static string FieldName_DisplayName {
+        public static string FieldName_DisplayName {
             get {
                 return ResourceManager.GetString("FieldName_DisplayName", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Display Order.
         /// </summary>
-        internal static string FieldName_DisplayOrder {
+        public static string FieldName_DisplayOrder {
             get {
                 return ResourceManager.GetString("FieldName_DisplayOrder", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Friendly URI.
         /// </summary>
-        internal static string FieldName_FriendlyURI {
+        public static string FieldName_FriendlyURI {
             get {
                 return ResourceManager.GetString("FieldName_FriendlyURI", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Image .
         /// </summary>
-        internal static string FieldName_ImagePath {
+        public static string FieldName_ImagePath {
             get {
                 return ResourceManager.GetString("FieldName_ImagePath", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Is Open New Page.
         /// </summary>
-        internal static string FieldName_IsOpenNewPage {
+        public static string FieldName_IsOpenNewPage {
             get {
                 return ResourceManager.GetString("FieldName_IsOpenNewPage", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Is Visible.
         /// </summary>
-        internal static string FieldName_IsVisible {
+        public static string FieldName_IsVisible {
             get {
                 return ResourceManager.GetString("FieldName_IsVisible", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Is Visible On Mobile.
         /// </summary>
-        internal static string FieldName_IsVisibleOnMobile {
+        public static string FieldName_IsVisibleOnMobile {
             get {
                 return ResourceManager.GetString("FieldName_IsVisibleOnMobile", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Meta Description.
         /// </summary>
-        internal static string FieldName_MetaDescription {
+        public static string FieldName_MetaDescription {
             get {
                 return ResourceManager.GetString("FieldName_MetaDescription", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Meta Keywords.
         /// </summary>
-        internal static string FieldName_MetaKeywords {
+        public static string FieldName_MetaKeywords {
             get {
                 return ResourceManager.GetString("FieldName_MetaKeywords", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Parent Category.
         /// </summary>
-        internal static string FieldName_ParentCategoryID {
+        public static string FieldName_ParentCategoryID {
             get {
                 return ResourceManager.GetString("FieldName_ParentCategoryID", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Product Listing Page Size.
         /// </summary>
-        internal static string FieldName_ProductListingPageSize {
+        public static string FieldName_ProductListingPageSize {
             get {
                 return ResourceManager.GetString("FieldName_ProductListingPageSize", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Short Name.
         /// </summary>
-        internal static string FieldName_ShortName {
+        public static string FieldName_ShortName {
             get {
                 return ResourceManager.GetString("FieldName_ShortName", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show Filters.
         /// </summary>
-        internal static string FieldName_ShowFilters {
+        public static string FieldName_ShowFilters {
             get {
                 return ResourceManager.GetString("FieldName_ShowFilters", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show on Product Feed.
         /// </summary>
-        internal static string FieldName_ShowOnProductFeed {
+        public static string FieldName_ShowOnProductFeed {
             get {
                 return ResourceManager.GetString("FieldName_ShowOnProductFeed", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show on Top Menu.
         /// </summary>
-        internal static string FieldName_ShowOnTopMenu {
+        public static string FieldName_ShowOnTopMenu {
             get {
                 return ResourceManager.GetString("FieldName_ShowOnTopMenu", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show Products.
         /// </summary>
-        internal static string FieldName_ShowProducts {
+        public static string FieldName_ShowProducts {
             get {
                 return ResourceManager.GetString("FieldName_ShowProducts", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show Sub Category On Top View.
         /// </summary>
-        internal static string FieldName_ShowSubCategoryOnTopView {
+        public static string FieldName_ShowSubCategoryOnTopView {
             get {
                 return ResourceManager.GetString("FieldName_ShowSubCategoryOnTopView", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show Sub Category Products.
         /// </summary>
-        internal static string FieldName_ShowSubCategoryProducts {
+        public static string FieldName_ShowSubCategoryProducts {
             get {
                 return ResourceManager.GetString("FieldName_ShowSubCategoryProducts", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Visibility End Date.
         /// </summary>
-        internal static string FieldName_VisibilityEndDate {
+        public static string FieldName_VisibilityEndDate {
             get {
                 return ResourceManager.GetString("FieldName_VisibilityEndDate", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Visibility Start Date.
         /// </summary>
-        internal static string FieldName_VisibilityStartDate {
+        public static string FieldName_VisibilityStartDate {
             get {
                 return ResourceManager.GetString("FieldName_VisibilityStartDate", resourceCulture);
             }

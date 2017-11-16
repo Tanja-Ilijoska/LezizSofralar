@@ -6,30 +6,116 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>AttributesViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+@{
+    ViewBag.Title = "Create";
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<!-- SubHeader -->
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="http://placehold.it/1400x300" data-natural-width="1400" data-natural-height="300">
+    <div id="sub_header">
+        <div class="container" id="sub_content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Create Attribute</h1>
+                    <div class="bread-crums">
+                        <a href="#">Home</a>
+                        <span class="bread-crums-span">&raquo;</span>
+                        <a href="#">Pages</a>
+                        <span class="bread-crums-span">&raquo;</span>
+                        <span class="current">Create Recipe</span>
+                    </div><!-- End bread-crums -->
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </div>
+</section>
+<!-- End SubHeader -->
+<div class="white_bg create-recipe">
+    <div class="container margin_60">
+        <div class="main_title">
+            <h2 class="nomargin_top">Create attribute</h2>
+            <hr class="divider">
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                       
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>   
+                        </div>          
+                </div>
+                <aside class="col-md-4 sidebar sticky-sidebar">
+                    <div class="theiaStickySidebar">
+                        <div class="form-group">
+                            <div class="add-photo">
+                                <label class="icon-picture gray">
+                                    <input type="file" name="picture" id="picture">
+                                </label>
+                            </div>
+                        </div>                       
+                        <div class="form-group">
+                            <div class="recipe-button">
+                                <button type="button" class="btn btn-publish">Publish</button>
+                                <button type="submit" class="btn btn-save" value="Create">Save</button>
+                                <button type="button" class="btn btn-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.CreatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="visibility:hidden">
+                    @Html.EditorFor(model => model.CreatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CreatedByUserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.DateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.UpdatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UpdatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UpdatedByUserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.DateUpdated, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateUpdated, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateUpdated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsActive)
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div><!-- End container -->
+</div><!-- End white_bg -->
+
+

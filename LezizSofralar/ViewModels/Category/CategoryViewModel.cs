@@ -19,7 +19,7 @@ namespace LezizSofralar.ViewModels
         public string Code { get; set; }
 
         [Display(Name = nameof(CategoryResources.FieldName_ParentCategoryID), ResourceType = typeof(CategoryResources))]
-        public int ParentLocationID { get; set; }
+        public int ParentCategoryID { get; set; }
 
         [Display(Name = nameof(CategoryResources.FieldName_ShortName), ResourceType = typeof(CategoryResources))]
         public string ShortName { get; set; }

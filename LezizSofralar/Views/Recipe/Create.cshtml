@@ -1,48 +1,273 @@
-﻿@model LezizSofralar.Models.Recipe
+﻿@model LezizSofralar.ViewModels.RecipesViewModel
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Recipe</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.DisplayName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DisplayName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DisplayName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+<!-- SubHeader -->
+<section class="parallax-window" id="short" data-parallax="scroll" data-image-src="http://placehold.it/1400x300" data-natural-width="1400" data-natural-height="300">
+    <div id="sub_header">
+        <div class="container" id="sub_content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Create Recipe</h1>
+                    <div class="bread-crums">
+                        <a href="#">Home</a>
+                        <span class="bread-crums-span">&raquo;</span>
+                        <a href="#">Pages</a>
+                        <span class="bread-crums-span">&raquo;</span>
+                        <span class="current">Create Recipe</span>
+                    </div><!-- End bread-crums -->
+                </div>
+            </div><!-- End row -->
+        </div><!-- End container -->
     </div>
-}
+</section>
+<!-- End SubHeader -->
+<div class="white_bg create-recipe">
+    <div class="container margin_60">
+        <div class="main_title">
+            <h2 class="nomargin_top">Create Recipe</h2>
+            <hr class="divider">
+        </div>
+       @using (Html.BeginForm())
+       {
+        @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DisplayName, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DisplayName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DisplayName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                     </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.DisplayOrder, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.DisplayOrder, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DisplayOrder, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FeaturedImage, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.FeaturedImage, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FeaturedImage, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.FriendlyURI, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.FriendlyURI, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FriendlyURI, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MetaKeywords, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.MetaKeywords, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MetaKeywords, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.MetaDescription, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ProductStatusCodeID, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProductStatusCodeID, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ProductStatusCodeID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                   
+                        <div class="form-group">
+                            <div class="recipe-ingredient">
+                                <div class="row-recipe-ingredient">
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">1</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                    </div>
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">2</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">3</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">4</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">5</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-ingredient">
+                                        <i class="ic icon-weight"></i>
+                                        <span class="count-of">6</span>
+                                        <input type="text" class="form-control" placeholder="Ingredient" name="recipe_ingredient[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-addnew-item"><i class="fa fa-plus-circle"></i> Add New Ingredient</button>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <div class="recipe-instructions">
+                                <div class="row-recipe-instructions">
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">1</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                    </div>
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">2</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">3</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">4</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">5</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                    <div class="col-recipe-instructions">
+                                        <i class="ic icon-manual-madrab"></i>
+                                        <span class="count-of">6</span>
+                                        <input type="text" class="form-control" placeholder="Instructions" name="recipe_instructions[]">
+                                        <span class="remove-recipe-col"><i class="fa fa-times"></i></span>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-addnew-item"><i class="fa fa-plus-circle"></i> Add New Instructions</button>
+                            </div>
+                        </div>
+                    </div>
+                <aside class="col-md-4 sidebar sticky-sidebar">
+                    <div class="theiaStickySidebar">
+                        <div class="form-group">
+                            <div class="add-photo">
+                                <label class="icon-picture gray">
+                                    <input type="file" name="picture" id="picture">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="preptime">Prep time</label>
+                            <input type="text" id="preptime" class="form-control" placeholder="Prep time">
+                        </div>
+                        <div class="form-group">
+                            <label for="cooktime">Cook time</label>
+                            <input type="text" id="cooktime" class="form-control" placeholder="Cook time">
+                        </div>
+                        <div class="form-group">
+                            <label for="numberofservings">Number of servings</label>
+                            <input type="text" id="numberofservings" class="form-control" placeholder="Number of servings">
+                        </div>
+                        <div class="form-group">
+                            <div class="recipe-button">
+                                <button type="button" class="btn btn-publish">Publish</button>
+                                <button type="submit" class="btn btn-save" value="Create">Save</button>
+                                <button type="button" class="btn btn-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.CreatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10" style="visibility:hidden">
+                    @Html.EditorFor(model => model.CreatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CreatedByUserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.DateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.UpdatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UpdatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UpdatedByUserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.DateUpdated, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateUpdated, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DateUpdated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="visibility:hidden">
+                @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsActive)
+                        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+       }
+    </div><!-- End container -->
+</div><!-- End white_bg -->
+

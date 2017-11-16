@@ -34,7 +34,7 @@ namespace LezizSofralar.Controllers
                  {
                      DisplayName = model.DisplayName,
                      Code = model.Code,
-                     ParentLocationID = model.ParentLocationID,
+                     ParentLocationID = model.ParentCategoryID,
                      ShortName = model.ShortName,
                      Description = model.Description,
                      MetaKeywords = model.MetaKeywords,
@@ -70,7 +70,7 @@ namespace LezizSofralar.Controllers
                         ID = item.ID,
                         DisplayName = item.DisplayName,
                         Code = item.Code,
-                        ParentLocationID = item.ParentLocationID,
+                        ParentCategoryID = item.ParentCategoryID,
                         ShortName = item.ShortName,
                         Description = item.Description,
                         MetaKeywords = item.MetaKeywords,
@@ -104,7 +104,7 @@ namespace LezizSofralar.Controllers
             model.ID = dbItem.ID;
             model.DisplayName = dbItem.DisplayName;
             model.Code = dbItem.Code;
-            model.ParentLocationID = dbItem.ParentLocationID;
+            model.ParentCategoryID = dbItem.ParentCategoryID;
             model.ShortName = dbItem.ShortName;
             model.Description = dbItem.Description;
             model.MetaKeywords = dbItem.MetaKeywords;
@@ -134,7 +134,7 @@ namespace LezizSofralar.Controllers
             dbItem.ID = model.ID;
             dbItem.DisplayName = model.DisplayName;
             dbItem.Code = model.Code;
-            dbItem.ParentLocationID = model.ParentLocationID;
+            dbItem.ParentCategoryID = model.ParentCategoryID;
             dbItem.ShortName = model.ShortName;
             dbItem.Description = model.Description;
             dbItem.MetaKeywords = model.MetaKeywords;

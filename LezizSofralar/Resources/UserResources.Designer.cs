@@ -22,7 +22,7 @@ namespace LezizSofralar.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class UserResources {
+    public class UserResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace LezizSofralar.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LezizSofralar.Resources.UserResources", typeof(UserResources).Assembly);
@@ -51,7 +51,7 @@ namespace LezizSofralar.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        internal static string FieldName_About {
+        public static string FieldName_About {
             get {
                 return ResourceManager.GetString("FieldName_About", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Avatar.
         /// </summary>
-        internal static string FieldName_Avatar {
+        public static string FieldName_Avatar {
             get {
                 return ResourceManager.GetString("FieldName_Avatar", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Cooking Level.
         /// </summary>
-        internal static string FieldName_CookingLevelID {
+        public static string FieldName_CookingLevelID {
             get {
                 return ResourceManager.GetString("FieldName_CookingLevelID", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Last Name.
         /// </summary>
-        internal static string FieldName_LastName {
+        public static string FieldName_LastName {
             get {
                 return ResourceManager.GetString("FieldName_LastName", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Last User Visit.
         /// </summary>
-        internal static string FieldName_LastUserVisit {
+        public static string FieldName_LastUserVisit {
             get {
                 return ResourceManager.GetString("FieldName_LastUserVisit", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
-        internal static string FieldName_LocationID {
+        public static string FieldName_LocationID {
             get {
                 return ResourceManager.GetString("FieldName_LocationID", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
-        internal static string FieldName_Name {
+        public static string FieldName_Name {
             get {
                 return ResourceManager.GetString("FieldName_Name", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Registration Date.
         /// </summary>
-        internal static string FieldName_RegistrationDate {
+        public static string FieldName_RegistrationDate {
             get {
                 return ResourceManager.GetString("FieldName_RegistrationDate", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reputation Score.
         /// </summary>
-        internal static string FieldName_ReputationScore {
+        public static string FieldName_ReputationScore {
             get {
                 return ResourceManager.GetString("FieldName_ReputationScore", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Username.
         /// </summary>
-        internal static string FieldName_UserName {
+        public static string FieldName_UserName {
             get {
                 return ResourceManager.GetString("FieldName_UserName", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to User Type.
         /// </summary>
-        internal static string FieldName_UserTypeID {
+        public static string FieldName_UserTypeID {
             get {
                 return ResourceManager.GetString("FieldName_UserTypeID", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace LezizSofralar.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Website.
         /// </summary>
-        internal static string FieldName_UserWebsiteURL {
+        public static string FieldName_UserWebsiteURL {
             get {
                 return ResourceManager.GetString("FieldName_UserWebsiteURL", resourceCulture);
             }
