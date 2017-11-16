@@ -1,4 +1,5 @@
 ﻿using LezizSofralar.Models;
+using LezizSofralar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,90 +8,108 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class UserController : Controller
+    public class UserController : StandardGenericController<UserListViewModel, UsersViewModel, Models.User>
     {
-        // GET: Users
-        public ActionResult Index()
+        public override IEnumerable<User> GetDataset()
         {
-            return View();
+            IEnumerable<Models.User> dbitems = Current.DbInit.User.All();
+            return dbitems;
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(int id)
+        public override User GetItem(int id)
         {
-            return View();
+            return Current.DbInit.User.Get(id);
         }
 
-        // GET: Users/Create
-        public ActionResult Create()
+        public override bool ProjectDeleteToEntity(int ID)
         {
-            return View();
+            return Current.DbInit.User.Delete(new { Id = ID });
         }
 
-        // POST: Users/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public override long ProjectInsertToEntity(UsersViewModel model)
         {
-            try
-            {
-                long uid = Current.DbInit.Recipe.Insert(
-                   new
-                   {
-                       Name = collection.GetValue("Name").ToString(),
-                       UserName = collection.GetValue("UserName").ToString(),
-                       UserTypeID = collection.GetValue("UserTypeID").ToString(),
-                   });
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return
+                Current.DbInit.Attribute.Insert(
+                new
+                {
+                    Name = model.Name,
+                    UserName = model.UserName,
+                    LastName = model.LastName,
+                    UserTypeID = model.UserTypeID,
+                    LastUserVisit = model.LastUserVisit,
+                    LocationID = model.LocationID,
+                    UserWebsiteURL = model.UserWebsiteURL,
+                    RegistrationDate = model.RegistrationDate,
+                    ReputationScore = model.ReputationScore,
+                    About = model.About,
+                    Avatar = model.Avatar,
+                    CookingLevelID = model.CookingLevelID
+                });
         }
 
-        // GET: Users/Edit/5
-        public ActionResult Edit(int id)
+        public override List<UserListViewModel> ProjectToListViewModel(IEnumerable<User> dbItems)
         {
-            return View();
+            List<UserListViewModel> model = new List<UserListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                foreach (var item in dbItems)
+                {
+                    model.Add(new UserListViewModel()
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        UserName = item.UserName,
+                        LastName = item.LastName,
+                        UserTypeID = item.UserTypeID,
+                        LastUserVisit = item.LastUserVisit,
+                        LocationID = item.LocationID,
+                        UserWebsiteURL = item.UserWebsiteURL,
+                        RegistrationDate = item.RegistrationDate,
+                        ReputationScore = item.ReputationScore,
+                        About = item.About,
+                        Avatar = item.Avatar,
+                        CookingLevelID = item.CookingLevelID
+                    });
+                }
+
+            return model;
         }
 
-        // POST: Users/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public override UsersViewModel ProjectToViewModel(User dbItem)
         {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            UsersViewModel model = new UsersViewModel();
+            model.Id = dbItem.Id;
+            model.Name = dbItem.Name;
+            model.UserName = dbItem.UserName;
+            model.LastName = dbItem.LastName;
+            model.UserTypeID = dbItem.UserTypeID;
+            model.LastUserVisit = dbItem.LastUserVisit;
+            model.LocationID = dbItem.LocationID;
+            model.UserWebsiteURL = dbItem.UserWebsiteURL;
+            model.RegistrationDate = dbItem.RegistrationDate;
+            model.ReputationScore = dbItem.ReputationScore;
+            model.About = dbItem.About;
+            model.Avatar = dbItem.Avatar;
+            model.CookingLevelID = dbItem.CookingLevelID;
+            return model;
         }
 
-        // GET: Users/Delete/5
-        public ActionResult Delete(int id)
+        public override long ProjectUpdateToEntity(User dbItem, UsersViewModel model)
         {
-            return View();
-        }
-
-        // POST: Users/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            dbItem.Id = model.Id;
+            dbItem.Name = model.Name;
+            dbItem.UserName = model.UserName;
+            dbItem.LastName = model.LastName;
+            dbItem.UserTypeID = model.UserTypeID;
+            dbItem.LastUserVisit = model.LastUserVisit;
+            dbItem.LocationID = model.LocationID;
+            dbItem.UserWebsiteURL = model.UserWebsiteURL;
+            dbItem.RegistrationDate = model.RegistrationDate;
+            dbItem.ReputationScore = model.ReputationScore;
+            dbItem.About = model.About;
+            dbItem.Avatar = model.Avatar;
+            dbItem.CookingLevelID = model.CookingLevelID;
+            return Current.DbInit.User.Update(dbItem.Id, dbItem);
         }
     }
 }

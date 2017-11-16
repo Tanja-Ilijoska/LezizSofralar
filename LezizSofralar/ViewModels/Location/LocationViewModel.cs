@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LezizSofralar.ViewModels.Location
+namespace LezizSofralar.ViewModels
 {
     public class LocationViewModel : BaseViewModel
     {

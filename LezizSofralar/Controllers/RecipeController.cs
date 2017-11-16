@@ -16,6 +16,11 @@ namespace LezizSofralar.Controllers
             return all;
         }
 
+        public override Recipe GetItem(int id)
+        {
+            return Current.DbInit.Recipe.Get(id);
+        }
+
         public override List<RecipesListViewModel> ProjectToListViewModel(IEnumerable<Recipe> dbItems)
         {
             List<RecipesListViewModel> model = new List<RecipesListViewModel>();
@@ -31,81 +36,60 @@ namespace LezizSofralar.Controllers
             return model;
         }
 
-        // GET: Recipes/Details/5
-        public ActionResult Details(int id)
+        public override RecipesViewModel ProjectToViewModel(Recipe dbItem)
         {
-            return View();
+            RecipesViewModel model = new RecipesViewModel();
+            model.Id = dbItem.Id;
+            model.DisplayName = dbItem.DisplayName;
+            model.DisplayOrder = dbItem.DisplayOrder;
+            model.Description = dbItem.Description;
+            model.FeaturedImage = dbItem.FeaturedImage;
+            model.FriendlyURI = dbItem.FriendlyURI;
+            model.MetaKeywords = dbItem.MetaKeywords;
+            model.MetaDescription = dbItem.MetaDescription;
+            model.ProductStatusCodeID = dbItem.ProductStatusCodeID;
+            return model;
         }
 
-        // GET: Recipes/Create
-        public ActionResult Create()
+        public override long ProjectInsertToEntity(RecipesViewModel model)
         {
-            return View();
+            return
+              Current.DbInit.Recipe.Insert(
+              new
+              {
+                    DisplayName = model.DisplayName,
+                    DisplayOrder = model.DisplayOrder,
+                    Description = model.Description,
+                    FeaturedImage = model.FeaturedImage,
+                    FriendlyURI = model.FriendlyURI,
+                    MetaKeywords = model.MetaKeywords,
+                    MetaDescription = model.MetaDescription,
+                    ProductStatusCodeID = model.ProductStatusCodeID
+            });
         }
 
-        // POST: Recipes/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public override long ProjectUpdateToEntity(Recipe dbItem, RecipesViewModel model)
         {
-            try
-            {
-                long uid = Current.DbInit.Recipe.Insert(
-                  new
-                  {
-                      Name = collection.GetValue("Name").ToString(),
-                      Instructions = collection.GetValue("Instructions").ToString()
-                  });
+            dbItem.Id = model.Id;
+            dbItem.Id = model.Id;
+            dbItem.DisplayName = model.DisplayName;
+            dbItem.DisplayOrder = model.DisplayOrder;
+            dbItem.Description = model.Description;
+            dbItem.FeaturedImage = model.FeaturedImage;
+            dbItem.FriendlyURI = model.FriendlyURI;
+            dbItem.MetaKeywords = model.MetaKeywords;
+            dbItem.MetaDescription = model.MetaDescription;
+            dbItem.ProductStatusCodeID = model.ProductStatusCodeID;
+            return Current.DbInit.Recipe.Update(dbItem.Id, dbItem);
 
-                return RedirectToAction("Index");
-            }
-            catch(Exception ex)
-            {
-                return View();
-            }
         }
 
-        // GET: Recipes/Edit/5
-        public ActionResult Edit(int id)
+        public override bool ProjectDeleteToEntity(int ID)
         {
-            return View();
+            return Current.DbInit.Recipe.Delete(new { Id = ID });
+
         }
 
-        // POST: Recipes/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Recipes/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Recipes/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

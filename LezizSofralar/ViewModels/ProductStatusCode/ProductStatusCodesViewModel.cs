@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LezizSofralar.ViewModels.ProductStatusCodes
+namespace LezizSofralar.ViewModels
 {
     public class ProductStatusCodesViewModel : BaseViewModel
     {

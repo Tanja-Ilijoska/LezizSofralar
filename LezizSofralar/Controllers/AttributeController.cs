@@ -8,132 +8,69 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class AttributeController : Controller //: StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
+    public class AttributeController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
     {
-        // GET: Attributes
-        public ActionResult Index()
+        public override IEnumerable<Models.Attribute> GetDataset()
         {
             IEnumerable<Models.Attribute> dbAttributes = Current.DbInit.Attribute.All();
+            return dbAttributes;
+        }
 
-            //filtering
+        public override Models.Attribute GetItem(int id)
+        {
+            return Current.DbInit.Attribute.Get(id);
+        }
 
-            //authorisation
 
-            //slapper mapping
-            List<AttributesViewModel> model = new List<AttributesViewModel>();
-            if (dbAttributes != null && dbAttributes.Count() > 0)
-                foreach (var item in dbAttributes)
+        public override bool ProjectDeleteToEntity(int ID)
+        {
+            return Current.DbInit.Attribute.Delete(new { Id = ID });
+        }
+
+        public override List<AttributesListViewModel> ProjectToListViewModel(IEnumerable<Models.Attribute> dbItems)
+        {
+            List<AttributesListViewModel> model = new List<AttributesListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                foreach (var item in dbItems)
                 {
-                    model.Add(new AttributesViewModel()
+                    model.Add(new AttributesListViewModel()
                     {
                         Id = item.Id,
                         Name = item.Name
                     });
                 }
 
-            return View(model);
+            return model;
         }
 
-        // GET: Attributes/Details/5
-        public ActionResult Details(int id)
+        public override AttributesViewModel ProjectToViewModel(Models.Attribute dbItem)
         {
             AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attribute.Get(id);
-            if (dbAttributes != null)
-            {
-                model.Id = dbAttributes.Id;
-                model.Name = dbAttributes.Name;
-            }
-            return View(model);
+            model.Id = dbItem.Id;
+            model.Name = dbItem.Name;
+            return model;
         }
 
-        // GET: Attributes/Create
-        public ActionResult Create()
+        public override long ProjectInsertToEntity(AttributesViewModel model)
         {
-            return View();
+           return
+                Current.DbInit.Attribute.Insert(
+                new
+                {
+                    Name = model.Name
+                });
         }
 
-        // POST: Attributes/Create
-        [HttpPost]
-        public ActionResult Create(AttributesViewModel collection)
+        public override long ProjectUpdateToEntity(Models.Attribute dbAttributes, AttributesViewModel model)
         {
-            try
-            {
-                long uid = Current.DbInit.Attribute.Insert(
-                  new
-                  {
-                      Name = collection.Name
-                  });
-
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                return View();
-            }
-        }
-
-        // GET: Attributes/Edit/5
-        public ActionResult Edit(int id)
-        {
-            AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attribute.Get(id);
-            if (dbAttributes != null)
-            {
-                model.Id = dbAttributes.Id;
-                model.Name = dbAttributes.Name;
-            }
-            return View(model);
-        }
-
-        // POST: Attributes/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, AttributesViewModel model)
-        {
-            try
-            {
-                var dbAttributes = Current.DbInit.Attribute.Get(id);
-                dbAttributes.Id = model.Id;
-                dbAttributes.Name = model.Name;
-                int uid = Current.DbInit.Attribute.Update(id, dbAttributes);
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Attributes/Delete/5
-        public ActionResult Delete(int id)
-        {
-            AttributesViewModel model = new AttributesViewModel();
-            var dbAttributes = Current.DbInit.Attribute.Get(id);
-            if (dbAttributes != null)
-            {
-                model.Id = dbAttributes.Id;
-                model.Name = dbAttributes.Name;
-            }
-            return View(model);
-        }
-
-        // POST: Attributes/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                bool isTrue = Current.DbInit.Attribute.Delete(new { Id = id });
-                if (isTrue)
-                    return RedirectToAction("Index");
-                else
-                    return View();
-            }
-            catch
-            {
-                return View();
-            }
+            dbAttributes.Id = model.Id;
+            dbAttributes.Name = model.Name;
+            //dbAttributes.CreatedByUserID = model.CreatedByUserID;
+            //dbAttributes.DateCreated = model.DateCreated;
+            //dbAttributes.IsActive = true;
+            //dbAttributes.UpdatedByUserID = model.UpdatedByUserID;
+            //dbAttributes.DateUpdated = model.DateUpdated;
+            return Current.DbInit.Attribute.Update(dbAttributes.Id, dbAttributes);
         }
     }
 }

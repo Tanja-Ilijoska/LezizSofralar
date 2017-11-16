@@ -10,7 +10,7 @@ namespace LezizSofralar.Models
         public int ID { get; set; }
         public string DisplayName { get; set; }
         public string Code { get; set; }
-        public int ParentCategoryID { get; set; }
+        public int ParentLocationID { get; set; }
         public string ShortName { get; set; }
         public string Description { get; set; }
         public string MetaKeywords { get; set; }
@@ -27,12 +27,11 @@ namespace LezizSofralar.Models
         public bool ShowProducts { get; set; }
         public bool ShowSubCategoryProducts { get; set; }
         public int ProductListingPageSize { get; set; }
-        public bool IsOpenNewPge { get; set; }
+        public bool IsOpenNewPage { get; set; }
         public bool IsVisibleOnMobile { get; set; }
         public bool ShowSubCategoryOnTopView { get; set; }
         public bool ShowOnProductFeed { get; set; }
         public string Latitude { get; set; }
-
         public string Longitude { get; set; }
 
         public int CreateUserID { get; set; }

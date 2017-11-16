@@ -1,89 +1,78 @@
-﻿using System;
+﻿using LezizSofralar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LezizSofralar.Models;
 
 namespace LezizSofralar.Controllers
 {
-    public class CookingLevelController : Controller
+    public class CookingLevelController : StandardGenericController<CookingLevelsListViewModel, CookingLevelsViewModel, Models.CookingLevel>
     {
-        // GET: CookingLevels
-        public ActionResult Index()
+        public override IEnumerable<CookingLevel> GetDataset()
         {
-            return View();
+            IEnumerable<Models.CookingLevel> dbItems = Current.DbInit.CookingLevel.All();
+            return dbItems;
         }
 
-        // GET: CookingLevels/Details/5
-        public ActionResult Details(int id)
+        public override CookingLevel GetItem(int id)
         {
-            return View();
+            return Current.DbInit.CookingLevel.Get(id);
         }
 
-        // GET: CookingLevels/Create
-        public ActionResult Create()
+        public override bool ProjectDeleteToEntity(int ID)
         {
-            return View();
+            return Current.DbInit.CookingLevel.Delete(new { Id = ID });
         }
 
-        // POST: CookingLevels/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public override long ProjectInsertToEntity(CookingLevelsViewModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return
+               Current.DbInit.Attribute.Insert(
+               new
+               {
+                   Name = model.Name,
+                   Description = model.Description,
+                   Level = model.Level
+               });
         }
 
-        // GET: CookingLevels/Edit/5
-        public ActionResult Edit(int id)
+        public override List<CookingLevelsListViewModel> ProjectToListViewModel(IEnumerable<CookingLevel> dbItems)
         {
-            return View();
+            List<CookingLevelsListViewModel> model = new List<CookingLevelsListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                foreach (var item in dbItems)
+                {
+                    model.Add(new CookingLevelsListViewModel()
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Description = item.Description,
+                        Level = item.Level
+                    });
+                }
+
+            return model;
         }
 
-        // POST: CookingLevels/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public override CookingLevelsViewModel ProjectToViewModel(CookingLevel dbItem)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            CookingLevelsViewModel model = new CookingLevelsViewModel();
+            model.Id = dbItem.Id;
+            model.Name = dbItem.Name;
+            model.Description = dbItem.Description;
+            model.Level = dbItem.Level;
+            return model;
         }
 
-        // GET: CookingLevels/Delete/5
-        public ActionResult Delete(int id)
+        public override long ProjectUpdateToEntity(CookingLevel dbItem, CookingLevelsViewModel model)
         {
-            return View();
-        }
-
-        // POST: CookingLevels/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            dbItem.Id = model.Id;
+            dbItem.Name = model.Name;
+            dbItem.Description = model.Description;
+            dbItem.Level = model.Level;
+            return Current.DbInit.Attribute.Update(dbItem.Id, dbItem);
         }
     }
 }

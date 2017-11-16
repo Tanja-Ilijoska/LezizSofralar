@@ -7,7 +7,7 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class UserTypesViewModel : BaseViewModel
+    public class UserTypeViewModel : BaseViewModel
     {
         [ScaffoldColumn(false)]
         public int Id { get; set; }

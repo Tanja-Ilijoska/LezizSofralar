@@ -8,23 +8,47 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public class UserTypeController : Controller
+    public class UserTypeController : StandardGenericController<UserTypeListViewModel, UserTypeViewModel, UserType>
     {
-        // GET: UserTypes
-        public ActionResult Index()
+        public override IEnumerable<UserType> GetDataset()
         {
-            IEnumerable<UserType> dbUserTypes = Current.DbInit.UserType.All();
+            IEnumerable<Models.UserType> dbItems = Current.DbInit.UserType.All();
+            return dbItems;
+        }
 
-            //filtering
+        public override UserType GetItem(int id)
+        {
+            return Current.DbInit.UserType.Get(id);
+        }
 
-            //authorisation
+        public override bool ProjectDeleteToEntity(int ID)
+        {
+            return Current.DbInit.UserType.Delete(new { Id = ID });
+        }
 
-            //slapper mapping
-            List<UserTypesViewModel> model = new List<UserTypesViewModel>();
-            if (dbUserTypes != null && dbUserTypes.Count() > 0)
-                foreach (var item in dbUserTypes)
+        public override long ProjectInsertToEntity(UserTypeViewModel model)
+        {
+            return
+                Current.DbInit.UserType.Insert(
+                new
                 {
-                    model.Add(new UserTypesViewModel()
+                    Name = model.Name,
+                    ManageCategories = model.ManageCategories,
+                    ManageLocations = model.ManageLocations,
+                    ManageFilters = model.ManageFilters,
+                    ManageUsers = model.ManageUsers,
+                    ManageRecipes = model.ManageRecipes,
+                    ManageOwnRecipes = model.ManageOwnRecipes
+                });
+        }
+
+        public override List<UserTypeListViewModel> ProjectToListViewModel(IEnumerable<UserType> dbItems)
+        {
+            List<UserTypeListViewModel> model = new List<UserTypeListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                foreach (var item in dbItems)
+                {
+                    model.Add(new UserTypeListViewModel()
                     {
                         Id = item.Id,
                         Name = item.Name,
@@ -37,139 +61,35 @@ namespace LezizSofralar.Controllers
                     });
                 }
 
-            return View(model);
+            return model;
         }
 
-        // GET: UserTypes/Details/5
-        public ActionResult Details(int id)
+        public override UserTypeViewModel ProjectToViewModel(UserType dbItem)
         {
-            UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserType.Get(id);
-            if (dbUserTypes != null)
-            {
-                model.Id = dbUserTypes.Id;
-                model.Name = dbUserTypes.Name;
-                model.ManageCategories = dbUserTypes.ManageCategories;
-                model.ManageFilters = dbUserTypes.ManageFilters;
-                model.ManageLocations = dbUserTypes.ManageLocations;
-                model.ManageOwnRecipes = model.ManageOwnRecipes;
-                model.ManageRecipes = model.ManageRecipes;
-                model.ManageUsers = dbUserTypes.ManageUsers;
-            }
-            return View(model);
+            UserTypeViewModel model = new UserTypeViewModel();
+            model.Id = dbItem.Id;
+            model.Name = dbItem.Name;
+            model.ManageCategories = dbItem.ManageCategories;
+            model.ManageFilters = dbItem.ManageFilters;
+            model.ManageLocations = dbItem.ManageLocations;
+            model.ManageOwnRecipes = dbItem.ManageOwnRecipes;
+            model.ManageRecipes = dbItem.ManageRecipes;
+            model.ManageUsers = dbItem.ManageUsers;
+            return model;
         }
 
-        // GET: UserTypes/Create
-        public ActionResult Create()
+        public override long ProjectUpdateToEntity(UserType dbItem, UserTypeViewModel model)
         {
-            return View();
-        }
+            dbItem.Id = model.Id;
+            dbItem.Name = model.Name;
+            dbItem.ManageCategories = model.ManageCategories;
+            dbItem.ManageFilters = model.ManageFilters;
+            dbItem.ManageLocations = model.ManageLocations;
+            dbItem.ManageOwnRecipes = model.ManageOwnRecipes;
+            dbItem.ManageRecipes = model.ManageRecipes;
+            dbItem.ManageUsers = model.ManageUsers;
+            return Current.DbInit.UserType.Update(dbItem.Id, dbItem);
 
-        // POST: UserTypes/Create
-        [HttpPost]
-        public ActionResult Create(UserTypesViewModel collection)
-        {
-            try
-            {
-                long uid = Current.DbInit.UserType.Insert(
-                  new
-                  {
-                      Name = collection.Name,
-                      ManageCategories = collection.ManageCategories,
-                      ManageLocations = collection.ManageLocations,
-                      ManageFilters = collection.ManageFilters,
-                      ManageUsers = collection.ManageUsers,
-                      ManageRecipes = collection.ManageRecipes,
-                      ManageOwnRecipes = collection.ManageOwnRecipes
-                  });
-
-                return RedirectToAction("Index");
-            }
-            catch(Exception ex)
-            {
-                return View();
-            }
-        }
-
-        // GET: UserTypes/Edit/5
-        public ActionResult Edit(int id)
-        {
-            UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserType.Get(id);
-            if (dbUserTypes != null)
-            {
-                model.Id = dbUserTypes.Id;
-                model.Name = dbUserTypes.Name;
-                model.ManageCategories = dbUserTypes.ManageCategories;
-                model.ManageFilters = dbUserTypes.ManageFilters;
-                model.ManageLocations = dbUserTypes.ManageLocations;
-                model.ManageOwnRecipes = dbUserTypes.ManageOwnRecipes;
-                model.ManageRecipes = dbUserTypes.ManageRecipes;
-                model.ManageUsers = dbUserTypes.ManageUsers;
-            }
-            return View(model);
-        }
-
-        // POST: UserTypes/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, UserTypesViewModel model)
-        {
-            try
-            {
-                var dbUserTypes = Current.DbInit.UserType.Get(id);
-                dbUserTypes.Id = model.Id;
-                dbUserTypes.Name =  model.Name;
-                dbUserTypes.ManageCategories= model.ManageCategories;
-                dbUserTypes.ManageFilters  =  model.ManageFilters;
-                dbUserTypes.ManageLocations = model.ManageLocations ;
-                dbUserTypes.ManageOwnRecipes = model.ManageOwnRecipes ;
-                dbUserTypes.ManageRecipes   =  model.ManageRecipes ;
-                dbUserTypes.ManageUsers =  model.ManageUsers;
-                int uid = Current.DbInit.UserType.Update(id, dbUserTypes);
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UserTypes/Delete/5
-        public ActionResult Delete(int id)
-        {
-            UserTypesViewModel model = new UserTypesViewModel();
-            var dbUserTypes = Current.DbInit.UserType.Get(id);
-            if (dbUserTypes != null)
-            {
-                model.Id = dbUserTypes.Id;
-                model.Name = dbUserTypes.Name;
-                model.ManageCategories = dbUserTypes.ManageCategories;
-                model.ManageFilters = dbUserTypes.ManageFilters;
-                model.ManageLocations = dbUserTypes.ManageLocations;
-                model.ManageOwnRecipes = model.ManageOwnRecipes;
-                model.ManageRecipes = model.ManageRecipes;
-                model.ManageUsers = dbUserTypes.ManageUsers;
-            }
-            return View(model);
-        }
-
-        // POST: UserTypes/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                bool isAnotherTrue = Current.DbInit.UserType.Delete(new { Id = id });
-                if(isAnotherTrue)
-                    return RedirectToAction("Index");
-                else
-                    return View();
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        }        
     }
 }

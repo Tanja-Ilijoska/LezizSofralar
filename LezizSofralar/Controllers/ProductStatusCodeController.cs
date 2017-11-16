@@ -1,89 +1,71 @@
-﻿using System;
+﻿using LezizSofralar.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LezizSofralar.Models;
 
 namespace LezizSofralar.Controllers
 {
-    public class ProductStatusCodeController : Controller
+    public class ProductStatusCodeController : StandardGenericController<ProductStatusCodesListViewModel, ProductStatusCodesViewModel, Models.ProductStatusCode>
     {
-        // GET: ProductStatusCode
-        public ActionResult Index()
+        public override IEnumerable<Models.ProductStatusCode> GetDataset()
         {
-            return View();
+            IEnumerable<Models.ProductStatusCode> dbItems = Current.DbInit.ProductStatusCode.All();
+            return dbItems;
         }
 
-        // GET: ProductStatusCode/Details/5
-        public ActionResult Details(int id)
+        public override Models.ProductStatusCode GetItem(int id)
         {
-            return View();
+            return Current.DbInit.ProductStatusCode.Get(id);
         }
 
-        // GET: ProductStatusCode/Create
-        public ActionResult Create()
+        public override bool ProjectDeleteToEntity(int ID)
         {
-            return View();
+            return Current.DbInit.ProductStatusCode.Delete(new { Id = ID });
         }
 
-        // POST: ProductStatusCode/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public override List<ProductStatusCodesListViewModel> ProjectToListViewModel(IEnumerable<Models.ProductStatusCode> dbItems)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            List<ProductStatusCodesListViewModel> model = new List<ProductStatusCodesListViewModel>();
+            if (dbItems != null && dbItems.Count() > 0)
+                foreach (var item in dbItems)
+                {
+                    model.Add(new ProductStatusCodesListViewModel()
+                    {
+                        ID = item.Id,
+                        Status = item.Status
+                    });
+                }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return model;
         }
 
-        // GET: ProductStatusCode/Edit/5
-        public ActionResult Edit(int id)
+        public override ProductStatusCodesViewModel ProjectToViewModel(Models.ProductStatusCode dbItem)
         {
-            return View();
+            ProductStatusCodesViewModel model = new ProductStatusCodesViewModel();
+            model.ID = dbItem.Id;
+            model.Status = dbItem.Status;
+            return model;
         }
 
-        // POST: ProductStatusCode/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public override long ProjectInsertToEntity(ProductStatusCodesViewModel model)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return
+                  Current.DbInit.ProductStatusCode.Insert(
+                  new
+                  {
+                      Status = model.Status
+                  });
         }
 
-        // GET: ProductStatusCode/Delete/5
-        public ActionResult Delete(int id)
+        public override long ProjectUpdateToEntity(Models.ProductStatusCode dbItem, ProductStatusCodesViewModel model)
         {
-            return View();
-        }
+            dbItem.Id = model.ID;
+            dbItem.Status = model.Status;
+            return Current.DbInit.ProductStatusCode.Update(dbItem.Id, dbItem);
 
-        // POST: ProductStatusCode/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

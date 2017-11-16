@@ -7,7 +7,7 @@ using System.Web;
 
 namespace LezizSofralar.ViewModels
 {
-    public class CookingLevelsListViewModel
+    public class CookingLevelsListViewModel : ListViewModel
     {
         [ScaffoldColumn(false)]
         public int Id { get; set; }

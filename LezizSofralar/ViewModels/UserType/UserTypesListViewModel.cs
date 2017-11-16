@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LezizSofralar.ViewModels.UserTypes
+namespace LezizSofralar.ViewModels
 {
-    public class UserTypesListViewModel : ListViewModel
+    public class UserTypeListViewModel : ListViewModel
     {
         [ScaffoldColumn(false)]
         public int Id { get; set; }
