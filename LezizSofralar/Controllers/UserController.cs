@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class UserController : StandardGenericController<UserListViewModel, UsersViewModel, Models.User>
     {
+        public override string EntityName()
+        {
+            return "User";
+        }
+
         public override IEnumerable<User> GetDataset()
         {
             IEnumerable<Models.User> dbitems = Current.DbInit.User.All();

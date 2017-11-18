@@ -13,7 +13,7 @@ namespace LezizSofralar.Models
         {
             get
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["lezizsofralarEntities3"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["LezizSofralarContext"].ConnectionString;
                 var conn = new MySqlConnection("Server = localhost; Database = lezizsofralar; UID = root; Password = admin; SslMode=none");
                 conn.Open();
                 return Db.Init(conn, commandTimeout: 30);

@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class CookingLevelController : StandardGenericController<CookingLevelsListViewModel, CookingLevelsViewModel, Models.CookingLevel>
     {
+        public override string EntityName()
+        {
+            return "CookingLevel";
+        }
+
         public override IEnumerable<CookingLevel> GetDataset()
         {
             IEnumerable<Models.CookingLevel> dbItems = Current.DbInit.CookingLevel.All();

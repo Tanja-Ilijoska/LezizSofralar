@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class ProductStatusCodeController : StandardGenericController<ProductStatusCodesListViewModel, ProductStatusCodesViewModel, Models.ProductStatusCode>
     {
+        public override string EntityName()
+        {
+            return "ProductStatusCode";
+        }
+
         public override IEnumerable<Models.ProductStatusCode> GetDataset()
         {
             IEnumerable<Models.ProductStatusCode> dbItems = Current.DbInit.ProductStatusCode.All();

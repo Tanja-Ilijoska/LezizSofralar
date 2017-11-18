@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace LezizSofralar.Controllers
 {
-    public abstract class StandardGenericController<TListViewModel , TViewModel, TEntity> : Controller
+    public abstract class StandardGenericController<TListViewModel, TViewModel, TEntity> : Controller
         where TListViewModel : ListViewModel
         where TViewModel : BaseViewModel
     {
@@ -23,11 +23,19 @@ namespace LezizSofralar.Controllers
 
             //slapper mapping
             List<TListViewModel> model = new List<TListViewModel>();
-            
+
             if (dbItems != null && dbItems.Count() > 0)
                 model = ProjectToListViewModel(dbItems);
 
             return View(model);
+        }
+
+        public abstract string EntityName();
+
+        public int CurrentUser()
+        {
+            //TO DO Authentication
+            return 0;
         }
 
         public abstract IEnumerable<TEntity> GetDataset();
@@ -36,22 +44,22 @@ namespace LezizSofralar.Controllers
 
         public ActionResult Details(int id)
         {
-            TViewModel model;            
+            TViewModel model;
             TEntity dbItem = GetItem(id);
-            model = ProjectToViewModel(dbItem);          
+            model = ProjectToViewModel(dbItem);
 
             return View(model);
         }
-        
+
         public abstract TEntity GetItem(int id);
 
         public abstract TViewModel ProjectToViewModel(TEntity dbItem);
-        
+
         public ActionResult Create()
         {
             return View();
         }
-        
+
         public ActionResult Read(int PageSize, int PageNumber)
         {
             return View();
@@ -64,7 +72,10 @@ namespace LezizSofralar.Controllers
             {
                 model.DateCreated = DateTime.Now;
                 model.DateUpdated = DateTime.Now;
-                long uid = ProjectInsertToEntity(model);                  
+                long uid = ProjectInsertToEntity(model);
+
+
+                LogChangeSave(CurrentUser(), EntityName(), "Add", DateTime.Now);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -78,10 +89,11 @@ namespace LezizSofralar.Controllers
             TViewModel model;
             var dbItem = GetItem(id);
             model = ProjectToViewModel(dbItem);
-            
+
+            LogChangeSave(CurrentUser(), EntityName(), "Edit", DateTime.Now);
             return View(model);
         }
-        
+
         public abstract long ProjectInsertToEntity(TViewModel model);
 
         [HttpPost]
@@ -92,25 +104,26 @@ namespace LezizSofralar.Controllers
                 model.DateUpdated = DateTime.Now;
                 var dbItem = GetItem(id);
                 long uid = ProjectUpdateToEntity(dbItem, model);
-
+                LogChangeSave(CurrentUser(), EntityName(), "Update", DateTime.Now);
                 return RedirectToAction("Index");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View();
             }
         }
 
-        public abstract long ProjectUpdateToEntity(TEntity dbItem,TViewModel model);
+        public abstract long ProjectUpdateToEntity(TEntity dbItem, TViewModel model);
 
         public ActionResult Delete(int id)
         {
             TViewModel model;
             var dbItem = GetItem(id);
             model = ProjectToViewModel(dbItem);
+            LogChangeSave(CurrentUser(), EntityName(), "Delete", DateTime.Now);
             return View(model);
         }
-               
+
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -129,5 +142,17 @@ namespace LezizSofralar.Controllers
         }
 
         public abstract bool ProjectDeleteToEntity(int ID);
+
+        public void LogChangeSave(int UserID, string Entity, string Operation, System.DateTime EventDate)
+        {
+            Current.DbInit.LogChange.Insert(
+                new
+                {
+                    UserID = UserID,
+                    Entity = Entity,
+                    Operation = Operation,
+                    EventDate = EventDate
+                });
+        }
     }
 }

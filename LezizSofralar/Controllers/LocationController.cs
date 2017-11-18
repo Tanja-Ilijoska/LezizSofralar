@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class LocationController : StandardGenericController<LocationListViewModel, LocationViewModel, Models.Location>
     {
+        public override string EntityName()
+        {
+            return "Location";
+        }
+
         public override IEnumerable<Location> GetDataset()
         {
             IEnumerable<Models.Location> dbCategories = Current.DbInit.Location.All();

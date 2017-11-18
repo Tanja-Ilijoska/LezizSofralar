@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class AttributeController : StandardGenericController<AttributesListViewModel, AttributesViewModel, Models.Attribute>
     {
+        public override string EntityName()
+        {
+            return "Attrbute";
+        }
+
         public override IEnumerable<Models.Attribute> GetDataset()
         {
             IEnumerable<Models.Attribute> dbAttributes = Current.DbInit.Attribute.All();
@@ -20,7 +25,6 @@ namespace LezizSofralar.Controllers
         {
             return Current.DbInit.Attribute.Get(id);
         }
-
 
         public override bool ProjectDeleteToEntity(int ID)
         {

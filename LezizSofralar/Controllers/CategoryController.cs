@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class CategoryController : StandardGenericController<CategoryListViewModel, CategoryViewModel, Models.Category>
     {
+        public override string EntityName()
+        {
+            return "Category";
+        }
+
         public override IEnumerable<Category> GetDataset()
         {
             IEnumerable<Models.Category> dbCategories = Current.DbInit.Category.All();

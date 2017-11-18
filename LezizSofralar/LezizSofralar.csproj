@@ -288,6 +288,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LogChange.cs" />
+    <Compile Include="Controllers\LogChangeController.cs" />
     <Compile Include="Controllers\RecipeAttributeController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\StandardGenericController.cs" />
@@ -850,10 +851,10 @@
     <Content Include="Views\Recipe\Delete.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\LogChange\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LogChange\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -884,7 +885,7 @@
       <LastGenOutput>LocationResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\LogChangeResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LogChangeResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ProductStatusCodeResources.resx">

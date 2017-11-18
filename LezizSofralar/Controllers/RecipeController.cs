@@ -10,6 +10,11 @@ namespace LezizSofralar.Controllers
 {
     public class RecipeController : StandardGenericController<RecipesListViewModel, RecipesViewModel, Recipe>
     {
+        public override string EntityName()
+        {
+            return "Recipe";
+        }
+
         public override IEnumerable<Recipe> GetDataset()
         {
             IEnumerable<Recipe> all = Current.DbInit.Recipe.All();
