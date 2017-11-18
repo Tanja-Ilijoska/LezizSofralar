@@ -1,7 +1,51 @@
-﻿
+﻿@model IEnumerable<LezizSofralar.ViewModels.UserListViewModel>
+
+
 @{
-    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="white_bg">
+    <div class="container margin_60">
+        <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="col-chef">
+                    <div class="photo">
+                        <img src="http://placehold.it/350x450" alt="">
+                    </div>
+                    <div class="chef-overlay">
+                        <h3><a href="#">The Best Chef</a></h3>
+                        <p>@item.Name @item.LastName</p>
+                        <ul class="stars">
+                            <li class="active"><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
+                            <li class="active"><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
+                            <li class="active"><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
+                            <li><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
+                            <li><a href="#" class="icon"><i class="fa fa-star"></i></a></li>
+                        </ul><!-- End stars -->
+                    </div><!-- End chef-overlay -->
+                </div><!-- End col-chef -->
+            </div>
+        }
+        </div><!-- End row -->
+
+        <div class="row">
+            <div class="col-md-12 text-center margin_top_40">
+                <nav class="navigation pagination">
+                    <div class="nav-links">
+                        <a class="prev page-numbers">Previous</a>
+                        <span class="page-numbers current">1</span>
+                        <a class="page-numbers" href="#">2</a>
+                        <a class="page-numbers" href="#">3</a>
+                        <a class="page-numbers" href="#">4</a>
+                        <a class="page-numbers" href="#">5</a>
+                        <a class="next page-numbers" href="#">Next</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div><!-- End container -->
+</div><!-- End white_bg -->
 

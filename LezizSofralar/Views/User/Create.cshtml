@@ -10,13 +10,13 @@
         <div class="container" id="sub_content">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Create Caegory</h1>
+                    <h1>Register</h1>
                     <div class="bread-crums">
                         <a href="#">Home</a>
                         <span class="bread-crums-span">&raquo;</span>
                         <a href="#">Pages</a>
                         <span class="bread-crums-span">&raquo;</span>
-                        <span class="current">Create Category</span>
+                        <span class="current">Register</span>
                     </div><!-- End bread-crums -->
                 </div>
             </div><!-- End row -->
@@ -27,7 +27,7 @@
 <div class="white_bg create-recipe">
     <div class="container margin_60">
         <div class="main_title">
-            <h2 class="nomargin_top">Create Recipe</h2>
+            <h2 class="nomargin_top">Register</h2>
             <hr class="divider">
         </div>
         @using (Html.BeginForm())
@@ -36,48 +36,7 @@
             <div class="row">
                 <div class="col-md-8">
                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.CreatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.CreatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.CreatedByUserID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DateCreated, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.DateCreated, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DateCreated, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.UpdatedByUserID, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.UpdatedByUserID, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.UpdatedByUserID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.DateUpdated, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.DateUpdated, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DateUpdated, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        <div class="checkbox">
-                            @Html.EditorFor(model => model.IsActive)
-                            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-
+               
                 <div class="form-group">
                     @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -102,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     @Html.LabelFor(model => model.UserTypeID, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.UserTypeID, new { htmlAttributes = new { @class = "form-control" } })
@@ -116,7 +75,7 @@
                         @Html.EditorFor(model => model.LastUserVisit, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.LastUserVisit, "", new { @class = "text-danger" })
                     </div>
-                </div>
+                </div>*@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.LocationID, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -134,21 +93,21 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                @*<div class="form-group">
                     @Html.LabelFor(model => model.RegistrationDate, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.RegistrationDate, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.RegistrationDate, "", new { @class = "text-danger" })
                     </div>
-                </div>
+                </div>*@
 
-                <div class="form-group">
+                @*<div class="form-group">
                     @Html.LabelFor(model => model.ReputationScore, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.ReputationScore, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.ReputationScore, "", new { @class = "text-danger" })
                     </div>
-                </div>
+                </div>*@
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.About, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -158,13 +117,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+               
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.CookingLevelID, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -174,26 +127,23 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.NumberProfileViews, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.NumberProfileViews, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.NumberProfileViews, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+               
 
 
                 </div>
-                <aside class="col-md-4 sidebar sticky-sidebar">
+               <aside class="col-md-4 sidebar sticky-sidebar">
                     <div class="theiaStickySidebar">
                         <div class="form-group">
                             <div class="add-photo">
                                 <label class="icon-picture gray">
+                                    @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
+
+
                                     <input type="file" name="picture" id="picture">
                                 </label>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
                             <div class="recipe-button">
                                 <button type="button" class="btn btn-publish">Publish</button>
@@ -249,24 +199,3 @@
         }
     </div><!-- End container -->
 </div><!-- End white_bg -->
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>UsersViewModel</h4>
-        <hr />
-        
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

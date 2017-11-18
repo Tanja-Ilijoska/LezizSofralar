@@ -29,7 +29,7 @@ namespace LezizSofralar.Controllers
         public override long ProjectInsertToEntity(UsersViewModel model)
         {
             return
-                Current.DbInit.Attribute.Insert(
+                Current.DbInit.User.Insert(
                 new
                 {
                     Name = model.Name,

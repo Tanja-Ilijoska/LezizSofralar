@@ -22,22 +22,22 @@ namespace LezizSofralar.ViewModels
         public string LastName { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_UserTypeID), ResourceType = typeof(UserResources))]
-        public int UserTypeID { get; set; }
+        public Nullable<int> UserTypeID { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_LastUserVisit), ResourceType = typeof(UserResources))]
-        public System.DateTime LastUserVisit { get; set; }
+        public Nullable<System.DateTime> LastUserVisit { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_LocationID), ResourceType = typeof(UserResources))]
-        public int LocationID { get; set; }
+        public Nullable<int> LocationID { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_UserWebsiteURL), ResourceType = typeof(UserResources))]
         public string UserWebsiteURL { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_RegistrationDate), ResourceType = typeof(UserResources))]
-        public System.DateTime RegistrationDate { get; set; }
+        public Nullable<System.DateTime> RegistrationDate { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_ReputationScore), ResourceType = typeof(UserResources))]
-        public decimal ReputationScore { get; set; }
+        public Nullable<decimal> ReputationScore { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_About), ResourceType = typeof(UserResources))]
         public string About { get; set; }
@@ -46,6 +46,6 @@ namespace LezizSofralar.ViewModels
         public string Avatar { get; set; }
 
         [Display(Name = nameof(UserResources.FieldName_CookingLevelID), ResourceType = typeof(UserResources))]
-        public int CookingLevelID { get; set; }
+        public Nullable<int> CookingLevelID { get; set; }
     }
 }
