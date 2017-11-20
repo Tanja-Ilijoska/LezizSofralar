@@ -9,7 +9,7 @@ namespace LezizSofralar.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }

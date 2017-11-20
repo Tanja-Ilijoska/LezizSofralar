@@ -75,7 +75,7 @@ namespace LezizSofralar.Controllers
                 long uid = ProjectInsertToEntity(model);
 
 
-                LogChangeSave(CurrentUser(), EntityName(), "Add", DateTime.Now);
+              //  LogChangeSave(CurrentUser(), EntityName(), "Add", DateTime.Now);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -89,8 +89,7 @@ namespace LezizSofralar.Controllers
             TViewModel model;
             var dbItem = GetItem(id);
             model = ProjectToViewModel(dbItem);
-
-            LogChangeSave(CurrentUser(), EntityName(), "Edit", DateTime.Now);
+            
             return View(model);
         }
 
@@ -104,7 +103,7 @@ namespace LezizSofralar.Controllers
                 model.DateUpdated = DateTime.Now;
                 var dbItem = GetItem(id);
                 long uid = ProjectUpdateToEntity(dbItem, model);
-                LogChangeSave(CurrentUser(), EntityName(), "Update", DateTime.Now);
+            //    LogChangeSave(CurrentUser(), EntityName(), "Update", DateTime.Now);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -120,7 +119,6 @@ namespace LezizSofralar.Controllers
             TViewModel model;
             var dbItem = GetItem(id);
             model = ProjectToViewModel(dbItem);
-            LogChangeSave(CurrentUser(), EntityName(), "Delete", DateTime.Now);
             return View(model);
         }
 
@@ -131,7 +129,10 @@ namespace LezizSofralar.Controllers
             {
                 bool isTrue = ProjectDeleteToEntity(id);
                 if (isTrue)
+                {
+                    LogChangeSave(CurrentUser(), EntityName(), "Delete", DateTime.Now);
                     return RedirectToAction("Index");
+                }
                 else
                     return View();
             }
