@@ -1,5 +1,6 @@
 ﻿using LezizSofralar.Models;
 using LezizSofralar.ViewModels;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace LezizSofralar.Controllers
         where TViewModel : BaseViewModel
     {
         // GET: StandardGeneric
-        public ActionResult Index()
+        public ActionResult Index(int? page, int? pageSize)
         {
             IEnumerable<TEntity> dbItems = GetDataset();
 
@@ -26,8 +27,8 @@ namespace LezizSofralar.Controllers
 
             if (dbItems != null && dbItems.Count() > 0)
                 model = ProjectToListViewModel(dbItems);
-
-            return View(model);
+            int pageNumber = (page ?? 1);
+            return View(model.ToPagedList(pageNumber, pageSize.HasValue ? pageSize.Value : 10));
         }
 
         public abstract string EntityName();

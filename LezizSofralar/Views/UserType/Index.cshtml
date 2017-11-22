@@ -1,4 +1,8 @@
-﻿@model IEnumerable<LezizSofralar.ViewModels.UserTypeListViewModel>
+﻿@using LezizSofralar.ViewModels
+@using PagedList.Mvc;
+
+@model PagedList.IPagedList<LezizSofralar.ViewModels.UserTypeListViewModel>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -26,25 +30,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageCategories)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageCategories)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageLocations)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageLocations)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageFilters)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageFilters)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageUsers)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageUsers)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageRecipes)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageRecipes)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ManageOwnRecipes)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ManageOwnRecipes)
         </th>
         <th></th>
     </tr>
@@ -81,3 +85,22 @@
 }
 
 </table>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav class="navigation pagination">
+            <br />
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index"))
+            @*<div class="nav-links">
+                    <a class="prev page-numbers">Previous</a>
+                    <span class="page-numbers current">1</span>
+                    <a class="page-numbers" href="#">2</a>
+                    <a class="page-numbers" href="#">3</a>
+                    <a class="page-numbers" href="#">4</a>
+                    <a class="page-numbers" href="#">5</a>
+                    <a class="next page-numbers" href="#">Next</a>
+                </div>*@
+        </nav><!-- END pagination -->
+    </div>
+</div>

@@ -1,4 +1,13 @@
-﻿@model IEnumerable<LezizSofralar.ViewModels.AttributesListViewModel>
+﻿@using LezizSofralar.ViewModels
+@using PagedList.Mvc;
+
+@model PagedList.IPagedList<LezizSofralar.ViewModels.AttributesListViewModel>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 
 @{
     ViewBag.Title = "Index";
@@ -25,7 +34,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
         </th>
         <th></th>
     </tr>
@@ -44,3 +53,22 @@
 }
 
 </table>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <nav class="navigation pagination">
+            <br />
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index"))
+            @*<div class="nav-links">
+                    <a class="prev page-numbers">Previous</a>
+                    <span class="page-numbers current">1</span>
+                    <a class="page-numbers" href="#">2</a>
+                    <a class="page-numbers" href="#">3</a>
+                    <a class="page-numbers" href="#">4</a>
+                    <a class="page-numbers" href="#">5</a>
+                    <a class="next page-numbers" href="#">Next</a>
+                </div>*@
+        </nav><!-- END pagination -->
+    </div>
+</div>
