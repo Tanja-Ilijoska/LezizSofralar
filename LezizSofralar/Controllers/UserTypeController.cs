@@ -93,6 +93,8 @@ namespace LezizSofralar.Controllers
             dbItem.ManageOwnRecipes = model.ManageOwnRecipes;
             dbItem.ManageRecipes = model.ManageRecipes;
             dbItem.ManageUsers = model.ManageUsers;
+            //dbItem.CreatedByUserID = model.CreatedByUserID;
+            //dbItem.IsActive = model.IsActive;
             return Current.DbInit.UserType.Update(dbItem.Id, dbItem);
 
         }        

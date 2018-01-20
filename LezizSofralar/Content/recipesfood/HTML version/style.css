@@ -4630,3 +4630,9 @@ ul.footer-contact li {
     z-index: 9999;
     max-width: 100%;
 }
+
+/*@media (min-width: 992px) {
+    .container {
+        width: 940px;
+    }
+}*/

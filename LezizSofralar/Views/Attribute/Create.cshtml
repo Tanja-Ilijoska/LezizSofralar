@@ -40,9 +40,7 @@
         {
             @Html.AntiForgeryToken()
             <div class="row">
-                <div class="col-md-8">
-                    <div class="row">
-                       
+                <div class="col-md-10">         
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -50,27 +48,17 @@
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
-                    </div>   
-                        </div>          
-                </div>
-                <aside class="col-md-4 sidebar sticky-sidebar">
-                    <div class="theiaStickySidebar">
-                        <div class="form-group">
-                            <div class="add-photo">
-                                <label class="icon-picture gray">
-                                    <input type="file" name="picture" id="picture">
-                                </label>
-                            </div>
-                        </div>                       
-                        <div class="form-group">
-                            <div class="recipe-button">
-                                <button type="button" class="btn btn-publish">Publish</button>
-                                <button type="submit" class="btn btn-save" value="Create">Save</button>
-                                <button type="button" class="btn btn-cancel">Cancel</button>
-                            </div>
-                        </div>
+                    </div>        
+                </div>               
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="recipe-button col-md-offset-8">
+                        <button type="button" class="btn btn-publish">Publish</button>
+                        <button type="submit" class="btn btn-save" value="Create">Save</button>
+                        <button type="button" class="btn btn-cancel">Cancel</button>
                     </div>
-                </aside>
+                </div>
             </div>
 
             <div class="form-group" style="visibility:hidden">

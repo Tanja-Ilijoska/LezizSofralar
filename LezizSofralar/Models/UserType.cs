@@ -23,13 +23,13 @@ namespace LezizSofralar.Models
 
         public bool ManageOwnRecipes { get; set; }
 
-        public int CreateUserID { get; set; }
+        public int CreatedByUserID { get; set; }
 
-        public System.DateTime CreateTime { get; set; }
+        public System.DateTime DateCreated { get; set; }
 
-        public System.DateTime UpdateTime { get; set; }
+        public int UpdatedByUserID { get; set; }
 
-        public int UpdateUserID { get; set; }
+        public System.DateTime DateUpdated { get; set; }
 
         public bool IsActive { get; set; }
     }
