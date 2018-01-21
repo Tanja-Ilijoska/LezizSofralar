@@ -97,8 +97,10 @@
                     <nav class="col-md-6 col-sm-6 col-xs-7">
                         <div class="main-menu-2">
                             <ul>
-                                <li><a href="~/Account/login.html"><i class="fa fa-sign-in"></i> Login</a></li>
-                                <li><a href="~/User/Create"><i class="fa fa-user-plus"></i> Register</a></li>
+                                @Html.Partial("_LoginPartial")
+
+                                @*<li><a href="~/Account/Login.html"><i class="fa fa-sign-in"></i> Login</a></li>
+                                <li><a href="~/User/Create"><i class="fa fa-user-plus"></i> Register</a></li>*@
                             </ul>
                         </div><!-- End main-menu-2 -->
                     </nav>
